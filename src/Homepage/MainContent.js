@@ -18,7 +18,7 @@ const MainContent = () => {
           </div>
         </article>
       </section>
-
+      <h1 className="Best">August Best Sellers</h1>
       <section className="Shop">
         <article>
           <div className="headingCardContainer">
@@ -26,14 +26,14 @@ const MainContent = () => {
             <div className="card">
               <img src={Earring} alt="Card image" />
               <div className="card-body">
-                <h5 className="card-title">Round Diamond Earrings</h5>
+                <div className="card-title"><h5>Round Diamond Earrings</h5></div>
                 <p className="card-text">18K White Gold</p>
                 <div className="card-btn-container">
                   <a href="#" className="card-btn buy-now">
                     Buy Now
                   </a>
                   <button className="card-btn add-to-cart">
-                    Add to Shopping Cart
+                    Add to Cart
                   </button>
                 </div>
               </div>
@@ -42,7 +42,7 @@ const MainContent = () => {
         </article>
         <article>
           <div className="headingCardContainer">
-            <h1 className="heading1">Rings</h1>
+            <h1 className="heading1">Ring</h1>
             <div className="card">
               <img src={Diamondr} alt="Card image" />
               <div className="card-body">
@@ -53,7 +53,7 @@ const MainContent = () => {
                     Buy Now
                   </a>
                   <button className="card-btn add-to-cart">
-                    Add to Shopping Cart
+                    Add to Cart
                   </button>
                 </div>
               </div>
@@ -62,18 +62,18 @@ const MainContent = () => {
         </article>
         <article>
           <div className="headingCardContainer">
-            <h1 className="heading1">Necklaces</h1>
+            <h1 className="heading1">Necklace</h1>
             <div className="card">
               <img src={Diamondn} alt="Card image" />
               <div className="card-body">
-                <h5 className="card-title"> Round brilliant diamond pendant</h5>
+                <div className="card-title" ><h5> Round Brilliant Diamond Pendant</h5></div>
                 <p> Classic round brilliant diamond pendant.</p>
                 <div className="card-btn-container">
                   <a href="#" className="card-btn buy-now">
                     Buy Now
                   </a>
                   <button className="card-btn add-to-cart">
-                    Add to Shopping Cart
+                    Add to Cart
                   </button>
                 </div>
               </div>

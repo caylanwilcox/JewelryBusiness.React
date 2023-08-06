@@ -24,7 +24,7 @@ function Header(){
           <li><Link to="/about">About</Link></li>
         </ul>
       </nav>
-        <nav className="shipping"> Free Shipping on Orders $99 </nav>
+        
         </div>
     )
 }

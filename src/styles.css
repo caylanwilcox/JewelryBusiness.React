@@ -35,6 +35,7 @@ h1>img{
 
 }
 header {
+
   position: relative;
   text-align: center;
 }
@@ -70,7 +71,7 @@ nav ul{
   padding:10px;
   width: auto;
  margin-top:1rem;
- margin-bottom:.8rem;
+ margin-bottom:0px;
 }
 nav li {
   display: inline-block;
@@ -94,6 +95,7 @@ nav a{
   margin:0;
  color:rgb(0, 0, 0);
  font-family: 'Montserrat', sans-serif;
+ margin-top: .5%;
 }
 .banner{
   display:flex;
@@ -185,6 +187,6 @@ border-left: 2px solid rgb(0, 0, 0);
   font-size: 14px;
 }
 .special-offers-img {
-  width: 90px; /* Adjust this value according to your needs */
+  width: 50px; /* Adjust this value according to your needs */
   height: auto;
 }

@@ -1,21 +1,32 @@
 import React from 'react';
+import Footer from './Homepage/Footer'
 import Header from './Homepage/Header'
 import necklaz from './images/N102186_01.jpg';
-import Asset from './images/png-clipart-earring-gemological-institute-of-america-necklace-diamond-jewellery-jwellery-ring-bracelet.png';
-import Footer from './Homepage/Footer';
+import Asset from './images/graduated-diamond-necklace-anniversary-gifts-in-FDNK8068-NL-RG.jpg';
+import './Necklace.css';
+import SnakeChain from './images/1835013_master.jpg'
+import DropdownMenu from './DropdownMenu';
+
 const necklaces = [
   {
     id: 1,
-    name: 'DB Classic round brilliant diamond pendant',
-    price: 40,
+    name: 'DB Classic  Diamond Pendant',
+    price: 2500,
     imageUrl: necklaz,
   },
   {
     id: 2,
-    name: 'Necklace 2',
-    price: 50,
+    name: 'Diamond ',
+    price: 1500,
     imageUrl: Asset,
   },
+  {
+    id: 3,
+    name: 'Moments Heart Clasp Snake Chain Bracelet ',
+    price: 1500,
+    imageUrl: SnakeChain,
+  },
+
   // Add more necklace objects as needed
 ];
 
@@ -23,22 +34,45 @@ const Necklace = () => {
   return (
     <>
     <Header />
-    <div className="container mt-4">
-      <div className="row justify-content-center">
-        {necklaces.map((necklace) => (
-          <div key={necklace.id} className="col-lg-3 col-md-4 col-sm-6">
-            <div className="card">
-              <img src={necklace.imageUrl} alt={necklace.name} className="card-img-top" />
-              <div className="card-body">
-                <h5 className="card-title">{necklace.name}</h5>
-                <p className="card-text text-muted">Price: ${necklace.price.toFixed(2)}</p>
-                <button className="btn btn-primary">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-        ))}
+    
+    <section clasName="filter"></section>
+    <div className='titleBck'>
+    <div>
+    <h1 className='Title'>Diamond Necklace</h1>
+    <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Necklaces Collection Now!"</h5>
+    </div>
+    </div>
+    <div className='dropNav'><DropdownMenu/></div>
+    <section className="Shop">
+   
+    {necklaces.map((necklace) => (
+     
+      <article>
+  <div key={necklace.id} className="headingCardContainer">
+   
+    <div className="card">
+      <img src={necklace.imageUrl} alt={necklace.name} />
+      <div className="card-body">
+        <div className="card-title">
+          <h5>{necklace.name}</h5>
+        </div>
+        <p className="card-text">Price: ${necklace.price.toFixed(2)}</p>
+        <div className="card-btn-container">
+          <a href="#" className="card-btn buy-now">
+            Buy Now
+          </a>
+          <button className="card-btn add-to-cart">
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
+  </div>
+  </article>
+
+))}
+    </section>
+    
     <Footer/>
   </>
 );

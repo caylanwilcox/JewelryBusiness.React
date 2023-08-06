@@ -7,6 +7,7 @@ function Homepage(){
     return (
         <div>
           <Header />
+          <nav className="shipping"> Free Shipping on Orders $99 </nav>
           <MainContent />
           <Footer />
         </div>

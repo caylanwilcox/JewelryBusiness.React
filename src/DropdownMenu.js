@@ -6,7 +6,6 @@ function DropdownMenu() {
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
   };
-
   return (
     <select value={selectedOption} onChange={handleChange} className='DropdownMenu'>
       <option value="option1">Price &#9650; </option>

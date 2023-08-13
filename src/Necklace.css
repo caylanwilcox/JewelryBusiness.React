@@ -4,9 +4,9 @@
    justify-content: center;
    margin-left: auto;
    margin-right: auto;
-      width:90vw;
+  
       height:auto;
- 
+
       padding:15px;
       padding-top: 5px;
     }
@@ -90,8 +90,8 @@ padding-bottom:   20px;
   /* General styles for the buttons */
   .headingCardContainer .card .card-btn-container .card-btn {
     background-color: #f1f1f1; /* Blue background */
-    border: solid 1px #d2b48cbc;
-    color:#6f5635;; /* White text */
+    border: solid 1px #b3aca2bc;
+    color:#21201d;; /* White text */
     padding: 10px 24px; /* Some padding */
     text-align: center; /* Center the text */
     text-decoration: none; /* Remove underline */

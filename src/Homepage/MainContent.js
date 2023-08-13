@@ -12,7 +12,7 @@ const MainContent = () => {
             <div className="bannertext">
               <p>
                 Dazzle with Timeless Elegance – A Collection of Beautiful Necklaces that Will Elevate Your Style.{" "}
-                <span className="buyNow">Shop Now -&gt;</span>
+                <span className="buyNow"><a href="/Necklace">Shop Now</a> -&gt;</span>
               </p>
             </div>
           </div>

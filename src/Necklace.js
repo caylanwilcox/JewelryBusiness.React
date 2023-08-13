@@ -11,19 +11,19 @@ const necklaces = [
   {
     id: 1,
     name: 'DB Classic  Diamond Pendant',
-    price: 2500,
+    price: 3359,
     imageUrl: necklaz,
   },
   {
     id: 2,
     name: 'Diamond ',
-    price: 1500,
+    price: 1599,
     imageUrl: Asset,
   },
   {
     id: 3,
     name: 'Moments Heart Clasp Snake Chain Bracelet ',
-    price: 1500,
+    price: 1150,
     imageUrl: SnakeChain,
   },
 

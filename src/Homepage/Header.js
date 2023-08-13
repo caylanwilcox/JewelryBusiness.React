@@ -1,6 +1,7 @@
 import HeaderImage from "../images/Asset 1@3x.png"
 import ShoppingCartIcon from '../images/ShoppingCart.webp';
 import ProfileIcon from '../images/profile-icon.jpg';
+import ShoppingCart from '../ShoppingCart';
 import { Link } from 'react-router-dom';
 
 function Header(){
@@ -8,10 +9,16 @@ function Header(){
         <div>
        <div className="topbanner"></div>
       <header>
+      <Link to="/">
         <img src={HeaderImage} alt="Header Image" width="200" height="auto" />
+        </Link>
         <div className="icon-container">
+          <Link to="/ShoppingCart">
           <img src={ShoppingCartIcon} alt="Checkout Icon" className="icon" />
-          <img src={ ProfileIcon} alt="Login Icon" className="icon" />
+          </Link>
+          <Link to="/MyProfile">
+          <img src={ProfileIcon} alt="Login Icon"  className="icon" />
+          </Link>
         </div>
       </header>
         

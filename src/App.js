@@ -5,7 +5,8 @@ import Earring from "./Earring"
 import Ring from "./Ring"
 import About from "./About"
 import ShoppingCart from './ShoppingCart';
-import { Link, Routes, Route } from 'react-router-dom';
+import Contact from './Contact'
+import {Routes, Route } from 'react-router-dom';
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Earring" element={<Earring/>} />
         <Route path="/ShoppingCart" element={<ShoppingCart/>} />
         <Route path="/about" element={<About />} />
+        <Route path="/Contact" element={<Contact/>}/>
       </Routes>
   );
 }

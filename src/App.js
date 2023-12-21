@@ -8,13 +8,17 @@ import ShoppingCart from './ShoppingCart';
 import Contact from './Contact'
 import {Routes, Route } from 'react-router-dom';
 
+// In Necklace.js
+import Sidebar from './Sidebar'; // Adjust the path as necessary
 
+import { FilterProvider } from './FilterContext';
 
 function App() {
   return (
 
    
-
+    <FilterProvider>
+      
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/MyProfile" element={<MyProfile/>} />
@@ -25,6 +29,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/Contact" element={<Contact/>}/>
       </Routes>
+      </FilterProvider>
   );
 }
 

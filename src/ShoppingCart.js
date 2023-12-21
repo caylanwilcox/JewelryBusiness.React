@@ -1,5 +1,5 @@
 
-import './ShoppingCart.css';
+import './cssFiles/ShoppingCart.css';
 import Footer from './Homepage/Footer'
 import Header from './Homepage/Header';
 import React from 'react';

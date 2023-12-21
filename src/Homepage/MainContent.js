@@ -2,7 +2,7 @@ import React from 'react';
 import Diamondn from '../images/N102186_01.jpg';
 import Diamondr from '../images/setting_template_main.jpg';
 import Earring from '../images/download (1).jpg';
-import '../shop.css';
+import '../cssFiles/shop.css';
 import { Link } from 'react-router-dom';
 
 

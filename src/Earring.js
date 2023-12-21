@@ -2,7 +2,7 @@ import Header from './Homepage/Header';
 import Footer from './Homepage/Footer';
 import Earring2 from './images/5a58454b-e9e3-44aa-9256-da9dadaf2c2c.jpg.800x800_q85_background.jpg';
 import Asset from './images/Brilliance-Fine-Jewelry-0-25-Carat-T-W-Diamond-Stud-Earring-in-14K-White-Gold-I-J-I2-I3_058e720d-1d2d-4cdc-ba01-43839c6c41bb.8aff135d7c224ddd2aa7bef6656563e6.webp';
-import './Necklace.css';
+import './cssFiles/Necklace.css';
 import Earring1 from './images/istockphoto-1390616610-612x612.jpg';
 import DropdownMenu from './DropdownMenu';
 const necklaces = [

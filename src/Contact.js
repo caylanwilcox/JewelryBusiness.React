@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './contact.css'
+import './cssFiles/contact.css'
 import Header from './Homepage/Header';
 import Footer from './Homepage/Footer';
 const Contact = ()=>{         

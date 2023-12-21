@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Homepage/Header';
 import Footer from './Homepage/Footer';
-import './about.css';
+import './cssFiles/about.css';
 function About() {
     return (
         <>

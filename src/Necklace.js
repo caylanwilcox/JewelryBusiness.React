@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import Footer from './Homepage/Footer'
 import Header from './Homepage/Header'
 import necklaz from './images/N102186_01.jpg';
@@ -8,8 +8,8 @@ import SnakeChain from './images/1835013_master.jpg'
 import DropdownMenu from './DropdownMenu';
 import './cssFiles/sidebar.css';
 // In Necklace.js
-import Sidebar from './Sidebar'; 
-
+import Sidebar from './Sidebar';
+import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
 
 const necklaces = [
@@ -19,7 +19,7 @@ const necklaces = [
     price: 3359,
     rating: 5,
     imageUrl: necklaz,
-    material: [ 'silver']
+    material: ['silver']
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const necklaces = [
     price: 1599,
     imageUrl: Asset,
     rating: 3.5,
-    material: [ 'gold']
+    material: ['gold']
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const necklaces = [
     price: 1150,
     imageUrl: SnakeChain,
     rating: 4.5,
-    material:[ 'silver'],
+    material: ['silver'],
   },
 
   // Add more necklace objects as needed
@@ -43,22 +43,37 @@ const necklaces = [
 
 const Necklace = () => {
   // Sort the necklaces array by price in ascending order
-  const { filters } = useContext(FilterContext);
-const filteredNecklaces = necklaces
-.filter(necklace => {
-  // Apply price filter
-  const minPrice = filters.price.min || 0;
-  const maxPrice = filters.price.max || Infinity;
-  const priceMatch = necklace.price >= minPrice && necklace.price <= maxPrice;
+  const { filters, setSelectedProduct, selectedOption, selectedProduct } = useContext(FilterContext);
+  const navigate = useNavigate();
 
-  // Apply rating filter
-  const ratingMatch = filters.rating ? necklace.rating >= filters.rating : true;
+  const handleBuyNow = (product) => {
+    setSelectedProduct(product);
+    navigate('/buy-now');
+  };
+  const filteredNecklaces = necklaces
+    .filter(necklace => {
+      // Apply price filter
+      const minPrice = filters.price.min || 0;
+      const maxPrice = filters.price.max || Infinity;
+      const priceMatch = necklace.price >= minPrice && necklace.price <= maxPrice;
 
-  const materialMatch = necklace.material.every(material => filters.material[material]);
+      // Apply rating filter
+      const ratingMatch = filters.rating ? necklace.rating >= filters.rating : true;
 
-  return priceMatch && ratingMatch && materialMatch;
-})
-.sort((a, b) => a.price - b.price);
+      const materialMatch = necklace.material.every(material => filters.material[material]);
+
+      return priceMatch && ratingMatch && materialMatch;
+    })
+    .sort((a, b) => {
+      // Apply sorting based on sortPreference
+      if (selectedOption === 'option1') {
+        return a.price - b.price; // Sort by price ascending
+      } else if (selectedOption === 'option2') {
+        return b.price - a.price; // Sort by price descending
+      }
+      return 0; // Default case or no sorting
+    });
+
 
   return (
     <>
@@ -69,9 +84,9 @@ const filteredNecklaces = necklaces
           <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Necklaces Collection Now!"</h5>
         </div>
       </div>
-      <div className='dropNav'><DropdownMenu/></div>
+      <div className='dropNav'><DropdownMenu /></div>
       <div className='pageContent'>
-        <Sidebar/>
+        <Sidebar />
         <section className="Shop">
           {filteredNecklaces.map((necklace) => (
             <article key={necklace.id} className="headingCardContainer">
@@ -84,9 +99,9 @@ const filteredNecklaces = necklaces
                   <p className="card-text">Price: ${necklace.price.toFixed(2)}</p>
                   <p className="card-rating">Rating: {necklace.rating} / 5</p>
                   <div className="card-btn-container">
-                    <a href="#" className="card-btn buy-now">
+                    <button onClick={() => handleBuyNow(necklace)} className="card-btn buy-now">
                       Buy Now
-                    </a>
+                    </button>
                     <button className="card-btn add-to-cart">
                       Add to Cart
                     </button>
@@ -97,7 +112,7 @@ const filteredNecklaces = necklaces
           ))}
         </section>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

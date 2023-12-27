@@ -138,8 +138,8 @@ margin:auto;
 
 /* Change the background of the buttons on hover */
 .headingCardContainer .card .card-btn-container .card-btn:hover {
-  background-color: white; /* White background */
-  color: #008CBA; /* Blue text */
+  background-color: #fff2e0; /* White background */
+  color: #fbd6a6; /* Green text */
 }
 
 

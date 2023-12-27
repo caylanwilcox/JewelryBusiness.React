@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './cssFiles/shop.css';
+import {FilterContext} from './FilterContext'
 function DropdownMenu() {
-  const [selectedOption, setSelectedOption] = useState('option1');
+  const { selectedOption, setSelectedOption }=useContext(FilterContext)
+
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
@@ -10,7 +12,7 @@ function DropdownMenu() {
     <select value={selectedOption} onChange={handleChange} className='DropdownMenu'>
       <option value="option1">Price &#9650; </option>
       <option value="option2">Price &#9660;</option>
-      <option value="option3">Free Shipping</option>
+     
     </select>
   );
 }

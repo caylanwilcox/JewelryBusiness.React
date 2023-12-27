@@ -18,7 +18,7 @@ const MainContent = () => {
             <div className="bannertext">
               <p>
                 Dazzle with Timeless Elegance – A Collection of Beautiful Necklaces that Will Elevate Your Style.{" "}
-                <span className="buyNow"><a href="/Necklace">Shop Now</a> -&gt;</span>
+                
               </p>
             </div>
           </div>
@@ -36,14 +36,7 @@ const MainContent = () => {
               <div className="card-body">
                 <div className="card-title"><h5>Round Diamond Earrings</h5></div>
                 <p className="card-text">18K White Gold</p>
-                <div className="card-btn-container">
-                  <a href="#" className="card-btn buy-now">
-                    Buy Now
-                  </a>
-                  <button className="card-btn add-to-cart">
-                    Add to Cart
-                  </button>
-                </div>
+              
               </div>
             </div>
             </Link>
@@ -58,14 +51,7 @@ const MainContent = () => {
               <div className="card-body">
                 <h5 className="card-title">Petite Twist Diamond Engagement</h5>
                 <p className="card-text">Beautiful 14k White Gold</p>
-                <div className="card-btn-container">
-                  <a href="#" className="card-btn buy-now">
-                    Buy Now
-                  </a>
-                  <button className="card-btn add-to-cart">
-                    Add to Cart
-                  </button>
-                </div>
+             
               </div>
             </div>
             </Link>
@@ -80,14 +66,7 @@ const MainContent = () => {
               <div className="card-body">
                 <div className="card-title" ><h5> Round Brilliant Diamond Pendant</h5></div>
                 <p> Classic round brilliant diamond pendant.</p>
-                <div className="card-btn-container">
-                  <a href="#" className="card-btn buy-now">
-                    Buy Now
-                  </a>
-                  <button className="card-btn add-to-cart">
-                    Add to Cart
-                  </button>
-                </div>
+          
               </div>
             </div>
             </Link>

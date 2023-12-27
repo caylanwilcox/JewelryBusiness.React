@@ -15,8 +15,11 @@ export const FilterProvider = ({ children }) => {
       
       silver: true
     }
+    
   });
-
+  const [selectedOption, setSelectedOption] = useState('option1');
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  //you want to create a function that will update the filters without errasing all the other values in the state
   const updateFilters = (filterName, value) => {
     setFilters(prevFilters => ({
       ...prevFilters,
@@ -25,7 +28,7 @@ export const FilterProvider = ({ children }) => {
   };
 
   return (
-    <FilterContext.Provider value={{ filters, updateFilters }}>
+    <FilterContext.Provider value={{ filters, updateFilters,selectedOption, setSelectedOption ,selectedProduct, setSelectedProduct }}>
       {children}
     </FilterContext.Provider>
   );

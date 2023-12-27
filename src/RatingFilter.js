@@ -19,7 +19,7 @@ const RatingFilter = () => {
         value={filters.rating || 0}
         onChange={(e) => handleChange(e.target.value)}
       />
-      <div>Selected Rating: {filters.rating || 'None'}</div>
+      <div>Selected Rating: {filters.rating || ' '} / 5 </div>
     </div>
   );
 };

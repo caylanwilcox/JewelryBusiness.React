@@ -41,7 +41,7 @@ input:focus, textarea:focus {
     border-color: #0077b5;
 }
 
-button {
+.submitButton {
     background-color: #0077b5;
     color: #fff;
     padding: 10px 20px;
@@ -51,6 +51,6 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.submitButton:hover {
     background-color: #005a8e;
 }

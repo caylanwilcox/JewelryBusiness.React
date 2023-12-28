@@ -26,7 +26,7 @@ const necklaces = [
     name: 'Diamond ',
     price: 1599,
     imageUrl: Asset,
-    rating: 3.5,
+    rating: 4.0,
     material: ['gold']
   },
   {

@@ -1,25 +1,40 @@
 import React, { useContext } from 'react';
 import { FilterContext } from './FilterContext';
+import { FaStar } from 'react-icons/fa'; // Ensure you have installed react-icons
 
 const RatingFilter = () => {
   const { filters, updateFilters } = useContext(FilterContext);
 
   const handleChange = (newRating) => {
-    updateFilters('rating', parseFloat(newRating));
+    updateFilters('rating', newRating);
   };
 
   return (
     <div>
       <h4>Rating Filter</h4>
-      <input
-        type="range"
-        min="0"
-        max="5"
-        step="0.5"
-        value={filters.rating || 0}
-        onChange={(e) => handleChange(e.target.value)}
-      />
-      <div>Selected Rating: {filters.rating || ' '} / 5 </div>
+      <div style={{ display: 'flex' }}>
+        {[...Array(5)].map((_, index) => {
+          index += 1;
+          return (
+            <button
+              key={index}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+              onClick={() => handleChange(index)}
+              aria-label={`Rate ${index}`}
+            >
+              <FaStar
+                size={24}
+                color={index <= filters.rating ? "#ffc107" : "#e4e5e9"}
+              />
+            </button>
+          );
+        })}
+      </div>
+      
     </div>
   );
 };

@@ -17,6 +17,7 @@
     color: #333;
     font-size: 18px;
     margin-bottom: 15px;
+
   }
   
   /* Styling for inputs, selects, and buttons */
@@ -62,4 +63,25 @@
     margin-left: 270px; /* Adjust based on sidebar width */
     padding: 20px;
   }
-  
+/* Styles for the filter toggle as text */
+.filterToggle {
+  background-color: transparent; /* No background */
+  color: #6f5635; /* Matching the color theme */
+  border: none; /* No border */
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none; /* Underline to indicate it's clickable */
+}
+
+/* Hover effect for better user interaction */
+.filterToggle:hover {
+  color: #fbd6a6; /* Lighter shade for hover */
+}
+
+/* Focus styles to improve accessibility */
+.filterToggle:focus {
+  outline: none;
+  color: #fbd6a6; /* Highlight color on focus */
+  text-decoration: none; /* Remove underline on focus for distinction */
+}

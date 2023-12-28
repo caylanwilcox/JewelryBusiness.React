@@ -44,11 +44,25 @@
 }
 
 /* Adjust Main Content Area */
+/* Initial state of the main content area with a margin */
 .Shop {
-  margin-left: 25%; /* Adjust to match the sidebar width */
+  transition: margin-left 0.5s; /* Smooth transition for the margin change */
   padding: 20px;
-  
 }
+
+/* State of the main content area when sidebar is hidden */
+.Shop.expanded {
+  margin-left: 0; /* Remove the margin to allow content to expand */
+}
+
+/* Hidden state for the sidebar for animation */
+.sidebar.hidden {
+  width: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+  transition: width 0.5s, padding 0.5s; /* Smooth transition for width and padding */
+}
+
 .pageContent{
   display: flex;
 

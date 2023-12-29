@@ -84,7 +84,7 @@ const Necklace = () => {
           <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Necklaces Collection Now!"</h5>
         </div>
       </div>
-      <div className='dropNav'><DropdownMenu /></div>
+      <div className='dropNav'><DropdownMenu filteredItems={filteredNecklaces} /></div>
       <div className='pageContent'>
         <Sidebar />
         <section className="Shop">

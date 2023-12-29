@@ -75,7 +75,7 @@ function Ring(){
             <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Ring Collection Now!"</h5>
           </div>
         </div>
-        <div className='dropNav'><DropdownMenu /></div>
+        <div className='dropNav'><DropdownMenu filteredItems={filteredRings}/></div>
         <div className='pageContent'>
           <Sidebar />
           <section className="Shop">

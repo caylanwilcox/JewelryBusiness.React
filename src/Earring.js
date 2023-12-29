@@ -81,7 +81,7 @@ function Earring() {
           <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Earring Collection Now!"</h5>
         </div>
       </div>
-      <div className='dropNav'><DropdownMenu /></div>
+      <div className='dropNav'><DropdownMenu filteredItems={filteredEarrings}/></div>
       <div className='pageContent'>
         <Sidebar />
       <section className="Shop">

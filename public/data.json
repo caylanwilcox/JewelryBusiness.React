@@ -1,0 +1,130 @@
+[
+    {
+      "id": 0,
+      "name": "DB Classic Diamond Pendant",
+      "price": 2299,
+      "rating": 4,
+      "imageUrl": "/images/wedding-ring-custom-engagement-rings-wedding-bands-diamond-jewelry-37.png",
+      "category": "ring",
+      "material": ["silver"]
+    },
+    {
+      "id": 1,
+      "name": "DB Classic Diamond Pendant",
+      "price": 2299,
+      "rating": 4,
+      "imageUrl": "/images/TR713_WHITE_18K_SEMI.png",
+      "category": "ring",
+      "material": ["silver"]
+    },
+    {
+      "id": 2,
+      "name": "Unique Brilliance 0.25 Carat T.W",
+      "rating": 5,
+      "price": 4500,
+      "category": "ring",
+      "imageUrl": "/images/radiant_.png",
+      "material": ["silver"]
+    },
+    {
+      "id": 3,
+      "name": "Moments Diamond Ring",
+      "price": 3299,
+      "rating": 4.5,
+      "category": "ring",
+      "imageUrl": "/images/wedding-ring-custom-engagement-rings-wedding-bands-diamond-jewelry-37.png",
+      "material": ["silver"]
+    },
+    {
+      "id": 4,
+      "name": "DB Classic",
+      "price": 3359,
+      "rating": 5,
+      "imageUrl": "images/necklace1.jpg",
+      "category": "necklace",
+      "material": ["silver"]
+    },
+    {
+      "id": 5,
+      "name": "Rose D'Vine",
+      "price": 1599,
+      "imageUrl": "/images/graduated-diamond-necklace-anniversary-gifts-in-FDNK8068-NL-RG.jpg",
+      "rating": 4.0,
+      "category": "necklace",
+      "material": ["gold"]
+    },
+    {
+      "id": 6,
+      "name": "Heart Clasp Snake",
+      "price": 1150,
+      "imageUrl": "/images/1835013_master.jpg",
+      "rating": 4.5,
+      "category": "necklace",
+      "material": ["silver"]
+    },
+    {
+      "id": 7,
+      "name": "Solitaire",
+      "price": 3400,
+      "imageUrl": "/images/neclace 1.png",
+      "rating": 5,
+      "category": "necklace",
+      "material": ["Gold"]
+    },
+    {
+      "id": 8,
+      "name": "Nora Diamond",
+      "price": 3400,
+      "imageUrl": "/images/Nora Round Necklace.png",
+      "rating": 5,
+      "category": "necklace",
+      "material": ["silver"]
+    },
+    {
+      "id": 9,
+      "name": "Emerald Cut",
+      "price": 3400,
+      "imageUrl": "/images/Emerald Cut Diamond.jpg",
+      "rating": 5,
+      "category": "necklace",
+      "material": ["silver"]
+    },
+    {
+      "id": 10,
+      "name": "DB Classic Diamond Earring",
+      "price": 1599,
+      "imageUrl": "/images/istockphoto-1390616610-612x612.jpg",
+      "category": "earring",
+      "material": ["silver"],
+      "rating": 4.5
+    },
+    {
+      "id": 11,
+      "name": "Unique Brilliance 0.25 Carat T.W",
+      "price": 999,
+      "category": "earring",
+      "imageUrl": "/images/Brilliance-Fine-Jewelry-0-25-Carat-T-W-Diamond-Stud-Earring-in-14K-White-Gold-I-J-I2-I3_058e720d-1d2d-4cdc-ba01-43839c6c41bb.8aff135d7c224ddd2aa7bef6656563e6.webp",
+      "material": ["silver"],
+      "rating": 4.5
+    },
+    {
+      "id": 12,
+      "name": "Elegant Diamond Stud",
+      "price": 2299,
+      "category": "earring",
+      "imageUrl": "/images/1662042611-duo-drop-earrings-round-pear-three-quarter-yellow.jpg",
+      "material": ["gold"],
+      "rating": 5
+    },
+    {
+      "id": 13,
+      "name": "Elegant Diamond Stud",
+      "price": 2299,
+      "category": "earring",
+      "imageUrl": "/images/istockphoto-1390616610-612x612.jpg",
+      "material": ["gold"],
+      "rating": 5
+    }
+
+  ]
+  

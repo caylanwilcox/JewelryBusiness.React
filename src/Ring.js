@@ -1,70 +1,57 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import Header from './Homepage/Header';
 import Footer from './Homepage/Footer';
 import DropdownMenu from './DropdownMenu';
-import weddingRing from './images/wedding-ring-custom-engagement-rings-wedding-bands-diamond-jewelry-37.png';
-import ring1 from './images/radiant_.png';
-import ring2 from './images/TR713_WHITE_18K_SEMI.png';
+
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
 
-import './cssFiles/sidebar.css';
-const necklaces = [
-    {
-      id: 1,
-      name: 'DB Classic  Diamond Pendant',
-      price: 2299,
-      rating: 4,
-      imageUrl: weddingRing, material: ['silver']
-    },
-    {
-      id: 2,
-      name: 'Unique Brilliance 0.25 Carat T.W ',    rating: 5,
-      price: 4500,
-      imageUrl: ring1, material: ['silver']
-    },
-    {
-      id: 3,
-      name: 'Moments Diamond Ring',
-      price: 3299,    rating: 4.5,
-      imageUrl: ring2,    material: ['silver'],
-    },
-  
-    // Add more necklace objects as needed
-  ];
-function Ring(){
-  const { filters, setSelectedProduct, selectedOption, selectedProduct } = useContext(FilterContext);
+
+function Ring() {
+  const [rings, setRings] = useState([]);
+  const { filters, setSelectedProduct, selectedOption } = useContext(FilterContext);
   const navigate = useNavigate();
 
-  const handleBuyNow = (product) => {
-    setSelectedProduct(product);
+  useEffect(() => {
+    fetch('/data.json') // Assuming your JSON file is named 'products.json'
+      .then(response => response.json())
+      .then(data => {
+        // Assuming your JSON structure has all products, filter only rings
+        const ringData = data.filter(item => item.category === 'ring');
+        setRings(ringData);
+        console.log(ringData)
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+      });
+  }, []);
+
+  const handleBuyNow = (ring) => {
+    setSelectedProduct(ring);
     navigate('/buy-now');
   };
-  const filteredRings = necklaces
-    .filter(rings => {
-      // Apply price filter
+
+  const filteredRings = rings
+    .filter(ring => {
+      // Apply filters
       const minPrice = filters.price.min || 0;
       const maxPrice = filters.price.max || Infinity;
-      const priceMatch = rings.price >= minPrice && rings.price <= maxPrice;
-
-      // Apply rating filter
-      const ratingMatch = filters.rating ? rings.rating >= filters.rating : true;
-
-      const materialMatch = rings.material.every(material => filters.material[material]);
+      const priceMatch = ring.price >= minPrice && ring.price <= maxPrice;
+      const ratingMatch = filters.rating ? ring.rating >= filters.rating : true;
+      const materialMatch = ring.material.every(material => filters.material[material]);
 
       return priceMatch && ratingMatch && materialMatch;
     })
     .sort((a, b) => {
-      // Apply sorting based on sortPreference
+      // Apply sorting
       if (selectedOption === 'option1') {
-        return a.price - b.price; // Sort by price ascending
+        return a.price - b.price;
       } else if (selectedOption === 'option2') {
-        return b.price - a.price; // Sort by price descending
+        return b.price - a.price;
       }
-      return 0; // Default case or no sorting
+      return 0;
     });
-
     return (
       <>
         <Header />
@@ -82,7 +69,7 @@ function Ring(){
             {filteredRings.map((ring) => (
               <article key={ring.id} className="headingCardContainer">
                 <div className="card">
-                  <img src={ring.imageUrl} alt={ring.name} />
+                  <img src={ring.imageUrl} alt={ring.name} style={{width:'40%'}} />
                   <div className="card-body">
                     <div className="card-title">
                       <h5>{ring.name}</h5>

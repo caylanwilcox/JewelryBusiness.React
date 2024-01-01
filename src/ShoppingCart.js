@@ -4,7 +4,7 @@ import Footer from './Homepage/Footer'
 import Header from './Homepage/Header';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProfileIcon from './images/profile-icon.jpg';
+import ProfileIcon from './image/profile-icon.jpg';
 
 function ShoppingCart() {
     return (

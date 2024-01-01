@@ -1,8 +1,8 @@
 import React from 'react';
 
-import MBG from '../images/MBG.jpg';
-import SecurePaymentsIcon from '../images/SPM.png';
-import FreeShippingIcon from '../images/FSP.png';
+import MBG from '../image/MBG.jpg';
+import SecurePaymentsIcon from '../image/SPM.png';
+import FreeShippingIcon from '../image/FSP.png';
 
 const Footer = () => {
   return (

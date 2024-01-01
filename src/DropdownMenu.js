@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import './cssFiles/shop.css';
 import {FilterContext} from './FilterContext'
 function DropdownMenu({filteredItems}) {

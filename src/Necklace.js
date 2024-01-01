@@ -1,51 +1,28 @@
-import React, { useContext } from 'react';
-import Footer from './Homepage/Footer'
-import Header from './Homepage/Header'
-import necklaz from './images/N102186_01.jpg';
-import Asset from './images/graduated-diamond-necklace-anniversary-gifts-in-FDNK8068-NL-RG.jpg';
-import './cssFiles/Necklace.css';
-import SnakeChain from './images/1835013_master.jpg'
-import DropdownMenu from './DropdownMenu';
-import './cssFiles/sidebar.css';
-// In Necklace.js
+import React, { useContext, useState, useEffect } from 'react';
+import Footer from './Homepage/Footer';
+import Header from './Homepage/Header';
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
-
-const necklaces = [
-  {
-    id: 1,
-    name: 'DB Classic  Diamond Pendant',
-    price: 3359,
-    rating: 5,
-    imageUrl: necklaz,
-    material: ['silver']
-  },
-  {
-    id: 2,
-    name: 'Diamond ',
-    price: 1599,
-    imageUrl: Asset,
-    rating: 4.0,
-    material: ['gold']
-  },
-  {
-    id: 3,
-    name: 'Moments Heart Clasp Snake Chain',
-    price: 1150,
-    imageUrl: SnakeChain,
-    rating: 4.5,
-    material: ['silver'],
-  },
-
-  // Add more necklace objects as needed
-];
+import DropdownMenu from './DropdownMenu';
 
 const Necklace = () => {
-  // Sort the necklaces array by price in ascending order
-  const { filters, setSelectedProduct, selectedOption, selectedProduct } = useContext(FilterContext);
+  const [necklaces, setNecklaces] = useState([]);
+  const { filters, setSelectedProduct, selectedOption } = useContext(FilterContext);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    fetch('/data.json') // Assuming your JSON file is named 'products.json'
+      .then(response => response.json())
+      .then(data => {
+        // Assuming your JSON structure has all products, filter only necklaces
+        const necklaceData = data.filter(item => item.category === 'necklace');
+        setNecklaces(necklaceData);
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+      });
+  }, []);
   const handleBuyNow = (product) => {
     setSelectedProduct(product);
     navigate('/buy-now');
@@ -91,7 +68,7 @@ const Necklace = () => {
           {filteredNecklaces.map((necklace) => (
             <article key={necklace.id} className="headingCardContainer">
               <div className="card">
-                <img src={necklace.imageUrl} alt={necklace.name} />
+                <img src={necklace.imageUrl} alt={necklace.name} style={{width:'40%'}} />
                 <div className="card-body">
                   <div className="card-title">
                     <h5>{necklace.name}</h5>

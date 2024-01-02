@@ -4,6 +4,7 @@ import Footer from './Homepage/Footer';
 import DropdownMenu from './DropdownMenu';
 import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
+import cartIcon from './image/ShoppingCart.webp';
 
 // Import your earring images
 
@@ -63,40 +64,41 @@ function Earring() {
   return (
     <>
       <Header />
-      <section className="filter"></section>
-      <div className='titleBck'>
+      <div className='titleContainer'>
+      <div className='titleBckEarring'>
         <div>
-          <h1 className='Title'>Diamond Earrings</h1>
-          <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Earring Collection Now!"</h5>
+         
         </div>
+        </div>
+        <div className='square2'>
+  <div className="square2-content">
+    <h1>Luxury Redefined</h1>
+    <p>Discover an exclusive collection of fine jewelry that redefines luxury. Each piece is a testament to craftsmanship and timeless elegance.</p>
+    
+  </div>
+  </div>
       </div>
       <div className='dropNav'><DropdownMenu filteredItems={filteredEarrings}/></div>
       <div className='pageContent'>
         <Sidebar />
       <section className="Shop">
-        {filteredEarrings.map((earring) => (
-          <article key={earring.id} className="headingCardContainer">
-            <div className="card">
-              <img src={earring.imageUrl} alt={earring.name} />
-              <div className="card-body">
-                <div className="card-title">
-                  <h5>{earring.name}</h5>
-                </div>
-                <p className="card-text">Price: ${earring.price.toFixed(2)}</p>
-                <p className="card-rating">Rating: {earring.rating} / 5</p>
-                <div className="card-btn-container">
-                  <button onClick={() => handleBuyNow(earring)} className="card-btn buy-now">
-                    Buy Now
-                  </button>
-                  <button className="card-btn add-to-cart">
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-          
-            </div>
-          </article>
-        
+     
+{filteredEarrings.map((earring) => (
+  <article key={earring.id} className="headingCardContainer">
+    <div className="cardz" style={{ width: '400px' }}>
+      <div className="cardHead" style={{ background: 'white' }}>
+        <img src={cartIcon} alt="Cart" style={{ width: '40px' }} />
+      </div>
+      <img src={earring.imageUrl} alt={earring.name} className="product-image" style={{ width: '250px', height: 'auto' }} />
+      <div className="card-body">
+        <h5 className="product-name">{earring.name}</h5>
+        <div className="price-range">{earring.price.toFixed(2)}</div>
+        <div className="card-actions">
+          {/* Add the favorite and compare icons here */}
+        </div>
+      </div>
+    </div>
+  </article>
         ))}
       </section>
       </div>

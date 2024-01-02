@@ -12,7 +12,7 @@ const Sidebar = () => {
 
      
         <>
-          <RatingFilter />
+         {/*} <RatingFilter /> */}
           <PriceFilter />
           <MaterialFilter />
           {/* Other sidebar content */}

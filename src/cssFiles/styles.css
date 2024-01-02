@@ -1,4 +1,5 @@
 /* Search Bar Styling */
+
 .searchb{
   display:flex;
   justify-content: center;
@@ -6,18 +7,23 @@
   
 }
 .search-container {
-
-width:31%;
- 
+margin: 0;
+width:100%;
+ justify-content: center;
   display: flex;
   gap: 10px;
+  text-align: center;
 }
 
 .search-input {
+  display: flex;
+  justify-content: center;
   padding: 5px;
   font-family: 'Montserrat', sans-serif;
   border: 1px solid #ddd;
   border-radius: 4px;
+  width:32%;
+  margin-bottom: 15px;
 }
 
 .search-button {
@@ -27,6 +33,7 @@ width:31%;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .search-button:hover {
@@ -124,10 +131,11 @@ width:31%;
   display: flex;
   width:100%;
   height: .5rem;
-  background-color: rgb(46, 48, 48);
+  background-color: rgb(255, 255, 255);
   margin-bottom: 2rem;
   justify-content: flex-end;
   align-items: center;
+  
 
 }
 .topbanner p{
@@ -165,18 +173,18 @@ header {
 .icon-container {
   position: absolute;
   top: 50%;
-  right: 20%; /* You can adjust this value */
+  right:18%; /* You can adjust this value */
   transform: translateY(-50%);
   display: flex;
   gap: 20px;
 }
 .icon-container .icon:nth-child(2){
-  width: 30px;
-  height: 30px;
+  width: 10px;
+  height: 10px;
 }
 .icon {
   width: auto;
-  height: 30px;
+  height: 25px;
 }
 header >img {
   display:block;
@@ -184,39 +192,59 @@ header >img {
   margin-right: auto;
 
 }
-
-nav ul{
-  text-align: center;
-  background-color: black;
-  padding:10px;
-  width: auto;
- margin-top:1rem;
- margin-bottom:0px;
+.search-icon-button{
+  border:none;
+  background-color: white;;
 }
+nav ul {
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  color: #000;
+  list-style: none;
+}
+
 nav li {
   display: inline-block;
-  margin:0 2% 0 .5%;
-
-
+  position: relative; /* Context for the absolute positioning of the pseudo-element */
+  padding-left: 1%; /* Adjust as needed, gives space for the line on the left */
+  padding-right: 1%; /* Adjust as needed, gives space for the line on the right */
 }
+
+/* Add a right border to all li elements except the last one */
+nav li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-right: 1px solid #000000;
+  margin-left: 50%; /* This will effectively center the line between li elements */
+  height: 100%; /* Adjust the height if you want the line to be shorter */
+}
+
 
 .buyNow{
   margin-left: 5%;
   font-weight: bolder;
 }
 nav a{
-  color:white;
+  color:rgb(0, 0, 0);
   text-decoration: none;
 }
 .shipping{
   display: flex;
   justify-content: center;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(1, 0, 7);
   height: 2rem;
   margin:0;
- color:rgb(0, 0, 0);
+ color:rgb(255, 255, 255);
  font-family: 'Montserrat', sans-serif;
- margin-top: .5%;
+
+ border-bottom: 2px solid #000000;
+ font-weight:500;
 }
 .banner{
   display:flex;
@@ -238,8 +266,96 @@ align-items: baseline;
 background-color: rgba(0, 0, 0, 0.947);
 color: white;
 }
+.titleContainer{
+  display: flex;
+}
+.square2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #030510;
+  height: 27rem;
+  margin: 1% 0;
+  width: 50vw;
+  color: #ffffff; /* Assuming white text for contrast */
+  padding: 2rem; /* Add some padding inside the square */
+}
 
+.square2-content {
+  text-align: center; /* Center the text */
+}
 
+.square2 h1 {
+  font-size: 2.5rem; /* Large font size for the heading */
+  margin-bottom: 1rem; /* Space below the heading */
+}
+
+.square2 p {
+  font-size: 1.2rem; /* Readable font size for the paragraph */
+  margin-bottom: 2rem; /* Space below the paragraph */
+}
+
+.shop-now-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: gold; /* A luxurious button color */
+  color: #030510; /* Text color for the button */
+  text-decoration: none; /* Remove underline from the link */
+  border: none;
+  border-radius: 5px; /* Rounded corners for the button */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.shop-now-button:hover {
+  background-color: #ffffff; /* Lighter color on hover */
+  color: #030510;
+}
+
+.titleBckNecklace{
+ 
+  background-image: url('../image/216299211_m.png');
+  display:flex;
+  align-items: flex-end;
+  background-color: #181d33;
+  background-size:cover;
+  background-repeat: no-repeat;
+background-position:center;
+height: 27rem;
+width: 50vw;
+
+margin:1% 0% 1% 0
+
+}
+.titleBckRing{
+ 
+  background-image: url('../image/214743445_l.jpg');
+  display:flex;
+  align-items: flex-end;
+  background-color: #181d33;
+  background-size:cover;
+  background-repeat: no-repeat;
+background-position:center;
+height: 27rem;
+width: 50vw;
+
+margin:1% 0% 1% 0
+
+}
+
+.titleBckEarring{
+  background-image: url('../image/209940512_l.jpg');
+  display:flex;
+  align-items: flex-end;
+  background-color: #181d33;
+  background-size:cover;
+  background-repeat: no-repeat;
+background-position:center;
+height: 27rem;
+width: 50vw;
+
+margin:1% 0% 1% 0
+
+}
 
 /* CSS Styles for the Footer */
 footer {

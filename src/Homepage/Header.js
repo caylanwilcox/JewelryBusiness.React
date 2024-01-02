@@ -1,25 +1,34 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SearchContext } from '../SearchContext' //
+import { SearchContext } from '../SearchContext';
 import HeaderImage from "../image/Asset 1@3x.png";
 import ShoppingCartIcon from '../image/ShoppingCart.webp';
 import ProfileIcon from '../image/profile-icon.jpg';
+import SearchIcon from '../image/search-Icon.png';
 
 function Header() {
   const { setSearchTerm, searchTerm } = useContext(SearchContext);
+  const [showSearch, setShowSearch] = useState(false);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-  }
+  };
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  };
 
   return (
     <div>
+      <nav className="shipping">Free Shipping on Orders $99</nav>
+    
       <div className="topbanner"></div>
       <header>
         <Link to="/">
-          <img src={HeaderImage} alt="Header" width="200" height="auto" />
+          <img src={HeaderImage} alt="Header" width="160" height="auto" />
         </Link>
         <div className="icon-container">
+         
           <Link to="/ShoppingCart">
             <img src={ShoppingCartIcon} alt="Shopping Cart" className="icon" />
           </Link>
@@ -27,13 +36,8 @@ function Header() {
             <img src={ProfileIcon} alt="Profile" className="icon" />
           </Link>
         </div>
+     
       </header>
-      <div className="searchb">
-        <div className="search-container">
-          <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search..." />
-          <button className="search-button">Search</button>
-        </div>
-      </div>
       <nav>
         <ul>
           <li><Link to="/">Home</Link></li>
@@ -42,8 +46,24 @@ function Header() {
           <li><Link to="/Ring">Ring</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/Contact">Contact</Link></li>
+          <button onClick={toggleSearch} className="search-icon-button">
+            <img src={SearchIcon} alt="Search" className="icon" />
+          </button>
         </ul>
       </nav> 
+      {showSearch && (
+          <div className="search-container">
+            <input
+           className="search-input"
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              placeholder="Search..."
+              autoFocus
+            />
+            <button className="search-button">Search</button>
+          </div>
+        )}
     </div>
   );
 }

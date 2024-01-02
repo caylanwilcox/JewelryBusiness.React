@@ -10,7 +10,7 @@ function Homepage() {
   return (
     <div>
       <Header setSearchTerm={setSearchTerm} />
-      <nav className="shipping">Free Shipping on Orders $99</nav>
+      
       <MainContent />
       <Footer />
     </div>

@@ -14,24 +14,8 @@ margin-left: 5px;
  
   height: 100%;
 }
-.titleBck{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f8f8f8;
-margin:0;
-  
-  height:22vh;
 
-}
-.dropNav{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 5vh;
-margin-top: 5%;
- 
-}
+
 /* General container and layout styles */
 .titleBck {
   display: flex;
@@ -71,6 +55,7 @@ section.Shop {
   padding: 1rem; /* Padding around the entire grid */
   justify-content: center;
   align-items: stretch;
+
 }
 
 /* Styles for small screens - 1 item per row */
@@ -101,76 +86,89 @@ section.Shop {
   }
 }
 .headingCardContainer {
+  width: 100%;
+  height: auto;
+  max-width: 400px; /* Adjust the max-width as needed */
+}
+
+.cardz {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0.5rem; /* Margin around each card container */
+  box-shadow: 0 0 8px rgba(4, 0, 129, 0.086); /* Adjusted to remove bottom shadow */
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+  width: 400px;
+  height: auto;
 }
 
-/* Styles for each card */
-.card {
+.cardz:hover {
+  box-shadow: 0 0 12px rgb(30, 30, 39); /* Adjusted for hover effect */
+}
+.cardHead {
+  padding: 0.5rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: .25rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  background-color: #fff;
+  background-color: rgb(255, 0, 0);
+  border-bottom:none;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.delivery-info {
+  font-size: 0.8rem;
+  
 }
 
-.card img {
-  width: 60%; /* Make the image use all available width */
-  height: auto; /* Keep the image's aspect ratio */
+.product-image {
+  width: 100%;
+  object-fit: cover; /* Adjust as needed */
+  background-color: white;
 
 }
 
 .card-body {
   padding: 1rem;
-}
-
-.card p, .card h5 {
-  margin: 0.5rem 0;
   text-align: center;
 }
 
-/* Button container */
-.card-btn-container {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
+.product-name {
+  font-weight: light;
+  margin-bottom: 0.5rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: grey ;
+font-size: 17px;
 }
 
-/* General button styles */
+.price-range {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.card-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .card-btn {
   background-color: #f1f1f1;
-  border: solid 1px #d2b48c;
-  color: #6f5635;
+  border: 1px solid #d2b48c;
+  border-radius: 5px;
   padding: 0.5rem 1rem;
   margin: 0.5rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 
 .card-btn:hover {
   background-color: #fff2e0;
-  color: #3b3939;
+  border-color: #fbd6a6;
 }
 
-/* Specific button hover styles */
-.card-btn.buy-now:hover {
-  color: #fbd6a6;
-}
+/* You can add styles for icons here */
 
-.card-btn.add-to-cart:hover {
-  color: #fbd6a6;
-}
 
 .heading1{
  

@@ -2,10 +2,11 @@ import React, { useContext, useState, useEffect } from 'react';
 import Header from './Homepage/Header';
 import Footer from './Homepage/Footer';
 import DropdownMenu from './DropdownMenu';
-
+import cartIcon from './image/ShoppingCart.webp';
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
+
 
 
 function Ring() {
@@ -54,35 +55,37 @@ function Ring() {
     });
     return (
       <>
-        <Header />
-        <section className="filter"></section>
-        <div className='titleBck'>
-          <div>
-            <h1 className='Title'>Diamond Ring</h1>
-            <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Ring Collection Now!"</h5>
-          </div>
+      <Header />
+      <div className='titleContainer'>
+      <div className='titleBckRing'>
+        <div>
+         
         </div>
+        </div>
+        <div className='square2'>
+  <div className="square2-content">
+    <h1>Things Remembered</h1>
+    <p>Begin a lifelong journey of love and devotion. Each diamond ring is crafted to celebrate your unique love story forever.</p>
+    
+  </div>
+</div>
+      </div>
         <div className='dropNav'><DropdownMenu filteredItems={filteredRings}/></div>
         <div className='pageContent'>
           <Sidebar />
           <section className="Shop">
             {filteredRings.map((ring) => (
               <article key={ring.id} className="headingCardContainer">
-                <div className="card">
-                  <img src={ring.imageUrl} alt={ring.name} style={{width:'40%'}} />
+                <div className="cardz" style={{ width: '400px' }}>
+                  <div className="cardHead" style={{ background: 'white' }}>
+                    <img src={cartIcon} alt="Cart" style={{ width: '40px' }} />
+                  </div>
+                  <img src={ring.imageUrl} alt={ring.name} className="product-image" style={{ width: '250px', height: 'auto' }} />
                   <div className="card-body">
-                    <div className="card-title">
-                      <h5>{ring.name}</h5>
-                    </div>
-                    <p className="card-text">Price: ${ring.price.toFixed(2)}</p>
-                    <p className="card-rating">Rating: {ring.rating} / 5</p>
-                    <div className="card-btn-container">
-                      <button onClick={() => handleBuyNow(ring)} className="card-btn buy-now">
-                        Buy Now
-                      </button>
-                      <button className="card-btn add-to-cart">
-                        Add to Cart
-                      </button>
+                    <h5 className="product-name">{ring.name}</h5>
+                    <div className="price-range">{ring.price.toFixed(2)}</div>
+                    <div className="card-actions">
+                      {/* Add the favorite and compare icons here */}
                     </div>
                   </div>
                 </div>
@@ -94,5 +97,4 @@ function Ring() {
       </>
     );
   }
-  
   export default Ring;

@@ -5,7 +5,8 @@ import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
 import DropdownMenu from './DropdownMenu';
-
+import { FaBorderNone } from 'react-icons/fa';
+import cartIcon from './image/ShoppingCart.webp';
 const Necklace = () => {
   const [necklaces, setNecklaces] = useState([]);
   const { filters, setSelectedProduct, selectedOption } = useContext(FilterContext);
@@ -55,37 +56,43 @@ const Necklace = () => {
   return (
     <>
       <Header />
-      <div className='titleBck'>
+      <div className='titleContainer'>
+      <div className='titleBckNecklace'>
         <div>
-          <h1 className='Title'>Diamond Necklace</h1>
-          <h5 className='titleHeading'>"Discover Elegance: Shop the Finest Women's Necklaces Collection Now!"</h5>
+         
         </div>
+        </div>
+        <div className='square2'>
+  <div className="square2-content">
+    <h1>Luxury Redefined</h1>
+    <p>Discover an exclusive collection of fine jewelry that redefines luxury. Each piece is a testament to craftsmanship and timeless elegance.</p>
+    
+  </div>
+</div>
       </div>
       <div className='dropNav'><DropdownMenu filteredItems={filteredNecklaces} /></div>
       <div className='pageContent'>
         <Sidebar />
         <section className="Shop">
           {filteredNecklaces.map((necklace) => (
-            <article key={necklace.id} className="headingCardContainer">
-              <div className="card">
-                <img src={necklace.imageUrl} alt={necklace.name} style={{width:'40%'}} />
-                <div className="card-body">
-                  <div className="card-title">
-                    <h5>{necklace.name}</h5>
-                  </div>
-                  <p className="card-text">Price: ${necklace.price.toFixed(2)}</p>
-                  <p className="card-rating">Rating: {necklace.rating} / 5</p>
-                  <div className="card-btn-container">
-                    <button onClick={() => handleBuyNow(necklace)} className="card-btn buy-now">
-                      Buy Now
-                    </button>
-                    <button className="card-btn add-to-cart">
-                      Add to Cart
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </article>
+           <article key={necklace.id} className="headingCardContainer">
+           <div className="cardz">
+             <div className="cardHead"style={{background:'white'}} >
+             
+               {<img src={cartIcon} style={{width:'40px'}}></img>}
+             </div>
+             <img src={necklace.imageUrl} style={{width:'250px' , height:'auto'}} alt={necklace.name} className="product-image" />
+             <div className="card-body">
+               <h5 className="product-name">{necklace.name}</h5>
+               <div className="price-range"> {necklace.price.toFixed(2)}</div>
+               <div className="card-actions">
+                 {/* Add the favorite and compare icons here */}
+               </div>
+             
+             </div>
+           </div>
+         </article>
+         
           ))}
         </section>
       </div>

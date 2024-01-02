@@ -75,7 +75,7 @@
       "id": 8,
       "name": "Nora Diamond",
       "price": 3400,
-      "imageUrl": "/images/Nora Round Necklace.png",
+      "imageUrl": "/images/SNE42462DW_530x.webp",
       "rating": 5,
       "category": "necklace",
       "material": ["silver"]
@@ -84,7 +84,7 @@
       "id": 9,
       "name": "Emerald Cut",
       "price": 3400,
-      "imageUrl": "/images/Emerald Cut Diamond.jpg",
+      "imageUrl": "/images/imageService.webp",
       "rating": 5,
       "category": "necklace",
       "material": ["silver"]
@@ -109,10 +109,10 @@
     },
     {
       "id": 12,
-      "name": "Elegant Diamond Stud",
-      "price": 2299,
+      "name": "Golden Hearts",
+      "price": 4399,
       "category": "earring",
-      "imageUrl": "/images/1662042611-duo-drop-earrings-round-pear-three-quarter-yellow.jpg",
+      "imageUrl": "../images/881f290195421ca23ad57a6d78e9a8d4.jpg",
       "material": ["gold"],
       "rating": 5
     },

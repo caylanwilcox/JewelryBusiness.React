@@ -103,7 +103,9 @@ section.Shop {
 }
 
 .cardz:hover {
-  box-shadow: 0 0 12px rgb(30, 30, 39); /* Adjusted for hover effect */
+  box-shadow: 0 0 12px rgb(30, 30, 39); 
+  
+ cursor: pointer;
 }
 .cardHead {
   padding: 0.5rem;
@@ -114,7 +116,11 @@ section.Shop {
   background-color: rgb(255, 0, 0);
   border-bottom:none;
 }
-
+.cardHead img:hover {
+   /* Change the background color */
+  cursor: pointer; /* Change cursor to indicate clickable item */
+  transform: scale(1.2); /* Slightly increase the size */
+}
 .delivery-info {
   font-size: 0.8rem;
   

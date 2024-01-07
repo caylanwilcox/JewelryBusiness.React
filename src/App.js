@@ -12,6 +12,7 @@ import {React} from 'react';import BuyNowPage from "./BuyNowPage"
 
 import { SearchProvider} from './SearchContext';
 import { FilterProvider } from './FilterContext';
+import { CartProvider } from './Cart.Context';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
 
     <SearchProvider >
       <FilterProvider>
+        <CartProvider>
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/MyProfile" element={<MyProfile />} />
@@ -28,8 +30,9 @@ function App() {
           <Route path="/ShoppingCart" element={<ShoppingCart />} />
           <Route path="/about" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/buy-now" element={<BuyNowPage />} />
+          <Route path="/buy-now/:id" element={<BuyNowPage />} />
         </Routes>
+        </CartProvider>
       </FilterProvider>
     </SearchProvider >
   );

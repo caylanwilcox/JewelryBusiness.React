@@ -5,11 +5,11 @@ import HeaderImage from "../image/Asset 1@3x.png";
 import ShoppingCartIcon from '../image/ShoppingCart.webp';
 import ProfileIcon from '../image/profile-icon.jpg';
 import SearchIcon from '../image/search-Icon.png';
-
+import { CartContext } from '../Cart.Context';
 function Header() {
   const { setSearchTerm, searchTerm } = useContext(SearchContext);
   const [showSearch, setShowSearch] = useState(false);
-
+  const {cartItems}=useContext(CartContext)
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -31,6 +31,11 @@ function Header() {
          
           <Link to="/ShoppingCart">
             <img src={ShoppingCartIcon} alt="Shopping Cart" className="icon" />
+            {cartItems && cartItems.length > 0 && (
+  <span className="cart-badge">
+    {cartItems.length}
+  </span>
+)}
           </Link>
           <Link to="/MyProfile">
             <img src={ProfileIcon} alt="Profile" className="icon" />

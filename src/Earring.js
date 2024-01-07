@@ -5,7 +5,8 @@ import DropdownMenu from './DropdownMenu';
 import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
 import cartIcon from './image/ShoppingCart.webp';
-
+import { CartContext, showPopup,closePopup } from './Cart.Context';
+import Popup from './Popup';
 // Import your earring images
 
 // Import CSS
@@ -16,6 +17,10 @@ function Earring() {
   const [earrings, setEarrings] = useState([]);
   const { filters,  selectedOption } = useContext(FilterContext);
   const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext); // Use the addToCart function from CartContext
+  const { showPopup, closePopup } = useContext(CartContext);
+
+
 
   useEffect(() => {
     fetch('/data.json') // Assuming your server route for the JSON file is '/data'
@@ -30,6 +35,14 @@ function Earring() {
       });
   }, []);
 
+  const handleAddToCart = (event, earring) => {
+    event.stopPropagation();
+    addToCart(earring);
+  };
+
+  const handleBuyNow = (earring) => {
+    navigate(`/buy-now/${earring.id}`);
+  };
 
   const filteredEarrings = earrings
     .filter(earring => {
@@ -55,10 +68,7 @@ function Earring() {
     }
     return 0; // Default case or no sorting
   });
-  const handleBuyNow = (earring) => {
-    // Navigate to the buy now page with the earring's ID or unique identifier
-    navigate(`/buy-now/${earring.id}`);
-  };
+
 
 
   return (
@@ -84,10 +94,10 @@ function Earring() {
       <section className="Shop">
      
 {filteredEarrings.map((earring) => (
-  <article key={earring.id} className="headingCardContainer">
+  <article key={earring.id} onClick={() => handleBuyNow(earring)} className="headingCardContainer">
     <div className="cardz" style={{ width: '400px' }}>
       <div className="cardHead" style={{ background: 'white' }}>
-        <img src={cartIcon} alt="Cart" style={{ width: '40px' }} />
+        <img src={cartIcon} alt="Cart" style={{ width: '40px' }} onClick={(event) => handleAddToCart(event, earring)}/>
       </div>
       <img src={earring.imageUrl} alt={earring.name} className="product-image" style={{ width: '250px', height: 'auto' }} />
       <div className="card-body">
@@ -102,6 +112,7 @@ function Earring() {
         ))}
       </section>
       </div>
+      {showPopup && <Popup onClose={closePopup} />}
       <Footer />
     </>
   );

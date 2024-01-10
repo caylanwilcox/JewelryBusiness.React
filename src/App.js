@@ -5,14 +5,16 @@ import Earring from "./Earring"
 import Ring from "./Ring"
 import About from "./About"
 import ShoppingCart from './ShoppingCart';
+import Checkout from './Checkout'
 import Contact from './Contact'
 import { Routes, Route } from 'react-router-dom';
-import {React} from 'react';import BuyNowPage from "./BuyNowPage"
+import {React} from 'react';
 // In Necklace.js
 
 import { SearchProvider} from './SearchContext';
 import { FilterProvider } from './FilterContext';
 import { CartProvider } from './Cart.Context';
+import ItemPage from "./ItemPage"
 
 function App() {
 
@@ -30,7 +32,8 @@ function App() {
           <Route path="/ShoppingCart" element={<ShoppingCart />} />
           <Route path="/about" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/buy-now/:id" element={<BuyNowPage />} />
+          <Route path="/ItemPage/:id" element={<ItemPage/>} />
+          <Route path="/Checkout" element={<Checkout />} />
         </Routes>
         </CartProvider>
       </FilterProvider>

@@ -28,7 +28,7 @@ const MainContent = () => {
       <section className="Shop">
         <article>
           <div className="headingCardContainer">
-            <h1 className="heading1">Earrings</h1>
+            <h1 className="heading1"></h1>
             <Link to='./Earring' style={{ textDecoration: 'none' }} onClick={handleScroll}>
               <div className="cardz" style={{ display: 'flex', height: '325px', alignItems: 'center' }}>
 
@@ -36,13 +36,14 @@ const MainContent = () => {
                 <div className="card-body">
 
                 </div>
+                <h2 className='titleImageCover'>Earrings</h2>
               </div>
             </Link>
           </div>
         </article>
         <article>
           <div className="headingCardContainer">
-            <h1 className="heading1">Rings</h1>
+            <h1 className="heading1"></h1>
             <Link to='./ring' style={{ textDecoration: 'none' }} onClick={handleScroll}>
               <div className="cardz" style={{ height: '325px' }} >
                 <img src={Diamondr} alt="Card image" style={{ width: '50%', marginTop: '0px', height: 'auto' }} />
@@ -50,19 +51,23 @@ const MainContent = () => {
 
 
                 </div>
+                <h2 className='titleImageCover'>Rings</h2>
               </div>
+            
             </Link>
           </div>
         </article>
         <article>
           <div className="headingCardContainer">
-            <h1 className="heading1">Necklaces</h1>
+            <h1 className="heading1"></h1>
             <Link to='./Necklace' style={{ textDecoration: 'none' }} onClick={handleScroll}>
               <div className="cardz" style={{ display: 'flex', height: '325px', alignItems: 'center' }}>
                 <img src={necklace1} alt="Card image" style={{ marginTop: '0px', width: '60%', height: 'auto' }} />
                 <div className="card-body">
 
                 </div>
+                <h2 className='titleImageCover'>Necklaces</h2>
+
               </div>
             </Link>
           </div>

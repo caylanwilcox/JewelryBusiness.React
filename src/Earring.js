@@ -41,7 +41,7 @@ function Earring() {
   };
 
   const handleBuyNow = (earring) => {
-    navigate(`/buy-now/${earring.id}`);
+    navigate(`/ItemPage/${earring.id}`);
   };
 
   const filteredEarrings = earrings

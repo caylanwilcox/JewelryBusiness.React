@@ -137,7 +137,18 @@ section.Shop {
   padding: 1rem;
   text-align: center;
 }
+.titleImageCover{
+display: flex;
+height: 13%;
+width: 100%;
+justify-content: center;
+text-decoration: none;
+color: rgb(255, 255, 255);
+background-color: rgb(26, 26, 26);
+align-items: center;
+padding-bottom: 5px;
 
+}
 .product-name {
   font-weight: light;
   margin-bottom: 0.5rem;

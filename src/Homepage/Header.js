@@ -9,7 +9,7 @@ import { CartContext } from '../Cart.Context';
 function Header() {
   const { setSearchTerm, searchTerm } = useContext(SearchContext);
   const [showSearch, setShowSearch] = useState(false);
-  const {cartItems}=useContext(CartContext)
+  const {cartItems,setIsDirectCheckout}=useContext(CartContext)
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -17,7 +17,12 @@ function Header() {
   const toggleSearch = () => {
     setShowSearch(!showSearch);
   };
+  const handleCheckout = () => {
 
+    setIsDirectCheckout(false);
+
+  
+  };
   return (
     <div>
       <nav className="shipping">Free Shipping on Orders $99</nav>
@@ -32,7 +37,7 @@ function Header() {
           <Link to="/ShoppingCart">
             <img src={ShoppingCartIcon} alt="Shopping Cart" className="icon" />
             {cartItems && cartItems.length > 0 && (
-  <span className="cart-badge">
+  <span className="cart-badge" onClick={handleCheckout}>
     {cartItems.length}
   </span>
 )}

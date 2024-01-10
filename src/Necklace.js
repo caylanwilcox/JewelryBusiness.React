@@ -7,11 +7,16 @@ import { FilterContext } from './FilterContext';
 import DropdownMenu from './DropdownMenu';
 import { FaBorderNone } from 'react-icons/fa';
 import cartIcon from './image/ShoppingCart.webp';
+import { CartContext, showPopup,closePopup } from './Cart.Context';
+import Popup from './Popup';
+
 const Necklace = () => {
   const [necklaces, setNecklaces] = useState([]);
   const { filters, setSelectedProduct, selectedOption } = useContext(FilterContext);
   const navigate = useNavigate();
 
+  const { addToCart } = useContext(CartContext); // Use the addToCart function from CartContext
+  const { showPopup, closePopup } = useContext(CartContext);
   useEffect(() => {
     fetch('/data.json') // Assuming your JSON file is named 'products.json'
       .then(response => response.json())
@@ -24,9 +29,13 @@ const Necklace = () => {
         console.error('Error fetching data: ', error);
       });
   }, []);
-  const handleBuyNow = (product) => {
-    setSelectedProduct(product);
-    navigate('/buy-now');
+  const handleAddToCart = (event, necklace) => {
+    event.stopPropagation();
+    addToCart(necklace);
+  };
+
+  const handleBuyNow = (necklace) => {
+    navigate(`/ItemPage/${necklace.id}`);
   };
   const filteredNecklaces = necklaces
     .filter(necklace => {
@@ -75,11 +84,11 @@ const Necklace = () => {
         <Sidebar />
         <section className="Shop">
           {filteredNecklaces.map((necklace) => (
-           <article key={necklace.id} className="headingCardContainer">
+           <article key={necklace.id} onClick={() => handleBuyNow(necklace)}className="headingCardContainer">
            <div className="cardz">
              <div className="cardHead"style={{background:'white'}} >
              
-               {<img src={cartIcon} style={{width:'40px'}}></img>}
+               {<img src={cartIcon} style={{width:'40px'}}onClick={(event) => handleAddToCart(event, necklace)}></img>}
              </div>
              <img src={necklace.imageUrl} style={{width:'250px' , height:'auto'}} alt={necklace.name} className="product-image" />
              <div className="card-body">
@@ -96,6 +105,7 @@ const Necklace = () => {
           ))}
         </section>
       </div>
+      {showPopup && <Popup onClose={closePopup} />}
       <Footer />
     </>
   );

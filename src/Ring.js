@@ -6,14 +6,16 @@ import cartIcon from './image/ShoppingCart.webp';
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { FilterContext } from './FilterContext';
-
+import { CartContext, showPopup,closePopup } from './Cart.Context';
+import Popup from './Popup';
 
 
 function Ring() {
   const [rings, setRings] = useState([]);
   const { filters, setSelectedProduct, selectedOption } = useContext(FilterContext);
   const navigate = useNavigate();
-
+  const { addToCart } = useContext(CartContext); // Use the addToCart function from CartContext
+  const { showPopup, closePopup } = useContext(CartContext);
   useEffect(() => {
     fetch('/data.json') // Assuming your JSON file is named 'products.json'
       .then(response => response.json())
@@ -28,10 +30,14 @@ function Ring() {
       });
   }, []);
 
-  const handleBuyNow = (ring) => {
-    setSelectedProduct(ring);
-    navigate('/buy-now');
+  const handleAddToCart = (event, ring) => {
+    event.stopPropagation();
+    addToCart(ring);
   };
+  const handleBuyNow = (ring) => {
+    navigate(`/ItemPage/${ring.id}`);
+  };
+
 
   const filteredRings = rings
     .filter(ring => {
@@ -75,10 +81,10 @@ function Ring() {
           <Sidebar />
           <section className="Shop">
             {filteredRings.map((ring) => (
-              <article key={ring.id} className="headingCardContainer">
+              <article key={ring.id} onClick={() => handleBuyNow(ring)}className="headingCardContainer" >
                 <div className="cardz" style={{ width: '400px' }}>
                   <div className="cardHead" style={{ background: 'white' }}>
-                    <img src={cartIcon} alt="Cart" style={{ width: '40px' }} />
+                    <img src={cartIcon} alt="Cart"  onClick={(event) => handleAddToCart(event, ring)} style={{ width: '40px' }} />
                   </div>
                   <img src={ring.imageUrl} alt={ring.name} className="product-image" style={{ width: '250px', height: 'auto' }} />
                   <div className="card-body">
@@ -93,6 +99,7 @@ function Ring() {
             ))}
           </section>
         </div>
+        {showPopup && <Popup onClose={closePopup} />}
         <Footer />
       </>
     );

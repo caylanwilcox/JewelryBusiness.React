@@ -1,8 +1,7 @@
-//import useContext which is the react hook and import FilterContext which gives you access to props in the context
 import React, { useContext } from 'react';
 import { FilterContext } from './FilterContext';
+import './cssFiles/sidebar.css';
 
-//create component and import props underneath
 const MaterialFilter = () => {
   const { filters, updateFilters } = useContext(FilterContext);
 
@@ -14,23 +13,25 @@ const MaterialFilter = () => {
   };
 
   return (
-    <div>
-      <h4>Material Filter</h4>
-      <label>
+    <div className="filter-section">
+      <h5 className='filter-title'>Material</h5>
+      <label className="customcheckbox">
         <input
           type="checkbox"
           checked={filters.material.gold}
           onChange={() => handleMaterialChange('gold')}
         />
+        <span className="checkmark"></span>
         Gold
       </label>
     
-      <label>
+      <label className="customcheckbox">
         <input
           type="checkbox"
           checked={filters.material.silver}
           onChange={() => handleMaterialChange('silver')}
         />
+        <span className="checkmark"></span>
         Silver
       </label>
     </div>

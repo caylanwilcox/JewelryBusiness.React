@@ -1,0 +1,40 @@
+.payment-page-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    /* Add more styles for layout and spacing */
+    flex:1fr
+  }
+
+  .payment-form-container {
+    width: 60%;
+    /* Add more styles for form container */
+  }
+  
+  .payment-section {
+    margin-bottom: 20px;
+    /* Add more styles for section */
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* Add more styles for inputs */
+  }
+  
+  .pay-button {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Add more styles for button */
+  }
+  
+  /* Add additional CSS for product summary and other elements to match the design */
+  

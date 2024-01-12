@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
-import RatingFilter from './RatingFilter';
+import React from 'react';
 import PriceFilter from './PriceFilter';
-
 import MaterialFilter from './MaterialFilter';
+import './cssFiles/sidebar.css'; // Ensure this file contains the necessary styles
 
 const Sidebar = () => {
-
   return (
     <div className="sideBarContainer">
-      
-
-     
-        <>
-         {/*} <RatingFilter /> */}
-          <PriceFilter />
-          <MaterialFilter />
-          {/* Other sidebar content */}
-        </>
-  
+   <h2 className='filtermaintitle'>Filter</h2>
+      <PriceFilter />
+      <MaterialFilter />
+      {/* Other sidebar content */}
     </div>
   );
 };

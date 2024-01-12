@@ -36,7 +36,8 @@ const MainContent = () => {
                 <div className="card-body">
 
                 </div>
-                <h2 className='titleImageCover'>Earrings</h2>
+                <h2 className='titleImageCover'> Earrings</h2>
+           
               </div>
             </Link>
           </div>
@@ -51,7 +52,7 @@ const MainContent = () => {
 
 
                 </div>
-                <h2 className='titleImageCover'>Rings</h2>
+                <h2 className='titleImageCover'> Rings</h2>
               </div>
             
             </Link>
@@ -66,7 +67,7 @@ const MainContent = () => {
                 <div className="card-body">
 
                 </div>
-                <h2 className='titleImageCover'>Necklaces</h2>
+                <h2 className='titleImageCover'> Necklaces</h2>
 
               </div>
             </Link>

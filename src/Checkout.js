@@ -2,12 +2,16 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from './Cart.Context';
 import './cssFiles/Checkout.css';
 import Header from './Homepage/Header';
-
+import { useNavigate } from 'react-router-dom';
 const Checkout = () => {
   const { cartItems, handleRemoveFromCart, checkoutProduct, isDirectCheckout  } = useContext(CartContext);
   const [shippingAddress, setShippingAddress] = useState('');
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState('');
-
+  const navigate = useNavigate();
+  const handleCheckout = () => {
+    
+    navigate(`/Payment`); // Replace with the path to your Buy Now page
+};
   const handleAddressChange = (e) => {
     setShippingAddress(e.target.value);
   };
@@ -99,7 +103,7 @@ const Checkout = () => {
             {/* Order summary content */}
           </div>
           <div className="checkout-footer">
-            <button className="continue-button">Continue to Payment</button>
+            <button onClick={handleCheckout} className="continue-button">Continue to Payment</button>
           </div>
         </div>
       </div>

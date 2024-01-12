@@ -15,6 +15,7 @@ import { SearchProvider} from './SearchContext';
 import { FilterProvider } from './FilterContext';
 import { CartProvider } from './Cart.Context';
 import ItemPage from "./ItemPage"
+import PaymentPage from "./PaymentPage"
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/ItemPage/:id" element={<ItemPage/>} />
           <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/Payment" element={<PaymentPage />} />
         </Routes>
         </CartProvider>
       </FilterProvider>

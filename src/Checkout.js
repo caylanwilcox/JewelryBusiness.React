@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react';
 import { CartContext } from './Cart.Context';
 import './cssFiles/Checkout.css';
 import Header from './Homepage/Header';
+import Footer from './Homepage/Footer'
 import { useNavigate } from 'react-router-dom';
 const Checkout = () => {
   const { cartItems, handleRemoveFromCart, checkoutProduct, isDirectCheckout  } = useContext(CartContext);
   const [shippingAddress, setShippingAddress] = useState('');
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState('');
+  
   const navigate = useNavigate();
   const handleCheckout = () => {
     
@@ -103,10 +105,18 @@ const Checkout = () => {
             {/* Order summary content */}
           </div>
           <div className="checkout-footer">
-            <button onClick={handleCheckout} className="continue-button">Continue to Payment</button>
+            
+
+          <button 
+            onClick={handleCheckout} 
+            className="continue-button"
+            disabled={!selectedDeliveryOption || !shippingAddress }  // Disable button if no delivery option is selected
+          
+          >Continue to Payment</button>
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

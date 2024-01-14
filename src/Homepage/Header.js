@@ -6,14 +6,22 @@ import ShoppingCartIcon from '../image/ShoppingCart.webp';
 import ProfileIcon from '../image/profile-icon.jpg';
 import SearchIcon from '../image/search-Icon.png';
 import { CartContext } from '../Cart.Context';
+import { useNavigate } from 'react-router-dom';
+import SearchResultsPage from '../SearchResultsPage';
 function Header() {
-  const { setSearchTerm, searchTerm } = useContext(SearchContext);
+  const { setSearchTerm, searchTerm, performSearch } = useContext(SearchContext);
   const [showSearch, setShowSearch] = useState(false);
   const {cartItems,setIsDirectCheckout}=useContext(CartContext)
-  const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
   };
 
+  const handleSearchClick = () => {
+    performSearch(searchTerm);
+    navigate('/search'); // Navigate to the search results page
+  };
   const toggleSearch = () => {
     setShowSearch(!showSearch);
   };
@@ -56,11 +64,14 @@ function Header() {
           <li><Link to="/Ring">Ring</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/Contact">Contact</Link></li>
+          {/*
           <button onClick={toggleSearch} className="search-icon-button">
             <img src={SearchIcon} alt="Search" className="icon" />
           </button>
+            */}
         </ul>
       </nav> 
+      {/*
       {showSearch && (
           <div className="search-container">
             <input
@@ -71,11 +82,16 @@ function Header() {
               placeholder="Search..."
               autoFocus
             />
-            <button className="search-button">Search</button>
+           <button className="search-button" onClick={handleSearchClick}>
+        Search
+      </button>
           </div>
         )}
+     */}
     </div>
+     
   );
+  
 }
 
 export default Header;

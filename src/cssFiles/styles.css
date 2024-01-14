@@ -178,44 +178,51 @@ header {
   display: flex;
   gap: 20px;
 }
+/* The overall background of the popup, which also dims the content behind */
 .popup-container {
-  position: fixed;
+  position: fixed; /* Fixed position to cover the whole screen */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for overlay */
-  z-index: 1000; /* Ensure it's above other content */
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex; /* Using flex to center the child elements */
+  align-items: center; /* Aligns vertically center */
+  justify-content: center; /* Aligns horizontally center */
+  z-index: 1000; /* Ensures it sits above other content */
 }
 
+/* The styling for the popup message box */
 .popup-message {
-  background-color: #fff;
-  padding: 20px 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
+  background-color: #fff; /* White background to match the site's clean aesthetic */
+  padding: 25px 40px; /* Luxurious spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  border-radius: 5px; /* Subtle rounded corners */
+  font-family: 'Montserrat', sans-serif; /* Consistent with the website */
+  color: #333; /* Dark grey text for contrast against the white background */
+  font-size: 1rem; /* Suitable font size */
+  text-align: center; /* Centered text */
+  border: 1px solid #ccc; /* Light border for a subtle definition */
 }
 
+/* The close button styling */
 .popup-message button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff; /* Example blue color */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
+  margin-left: 12px;
+  margin-top: 20px; /* Space above the button */
+  padding: 10px 20px; /* Comfortable padding */
+  background-color: #333; /* Dark button for elegance */
+  color: #fff; /* White text for legibility */
+  font-family: 'Montserrat', sans-serif; /* Maintain font consistency */
+  font-weight: bold; /* Bold text to make it stand out */
+  border-radius: 3px; /* Matching the site's button style */
+  cursor: pointer; /* Cursor to indicate it's clickable */
+  border: none; /* Remove default border */
+  transition: background-color 0.3s ease; /* Smooth transition for interaction */
 }
-
+/* Hover effect for button */
 .popup-message button:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+  background-color: #555; /* Slightly lighter on hover for an interactive feel */
 }
-
 .icon-container .icon:nth-child(2){
   width: 10px;
   height: 10px;

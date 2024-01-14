@@ -7,11 +7,13 @@ import About from "./About"
 import ShoppingCart from './ShoppingCart';
 import Checkout from './Checkout'
 import Contact from './Contact'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route  } from 'react-router-dom';
+
 import {React} from 'react';
 // In Necklace.js
+import { SearchProvider } from './SearchContext';
+import SearchResultspage from './SearchResultsPage';
 
-import { SearchProvider} from './SearchContext';
 import { FilterProvider } from './FilterContext';
 import { CartProvider } from './Cart.Context';
 import ItemPage from "./ItemPage"
@@ -25,6 +27,7 @@ function App() {
       <FilterProvider>
         <CartProvider>
         <Routes>
+  
           <Route path="/" element={<Homepage />} />
           <Route path="/MyProfile" element={<MyProfile />} />
           <Route path="/Necklace" element={<Necklace />} />
@@ -36,6 +39,8 @@ function App() {
           <Route path="/ItemPage/:id" element={<ItemPage/>} />
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/Payment" element={<PaymentPage />} />
+          <Route path="/search" element={<SearchResultspage/>} />
+    
         </Routes>
         </CartProvider>
       </FilterProvider>

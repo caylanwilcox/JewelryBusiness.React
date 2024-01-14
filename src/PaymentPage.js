@@ -62,37 +62,39 @@ const PaymentPage = () => {
     }
   };
 
+ 
   return (
-<>
+    <>
       <Header />
-     
       <div className="payment-page-container">
-        <div className="payment-form-container">
-          <form onSubmit={handleSubmit}>
-          <div className="cart-total">
-        {isDirectCheckout? <span>Total: ${checkoutProduct.price}</span> : <span>Total: ${cartItems.reduce((total, item) => total + item.price, 0).toFixed(2)}</span>}
-    </div>
-            <div className="payment-section">
-            <button type="submit" className="pay-button">Pay</button>
-
-              <h2>Shipping Information</h2>
-              <input type="email" value={email} onChange={handleEmailChange} placeholder="Email" required />
-              <input type="text" value={name} onChange={handleNameChange} placeholder="Name" required />
-              <input type="text" value={address} onChange={handleAddressChange} placeholder="Address" required />
-              {/* Add more fields for shipping information */}
-            </div>
-            <div className="payment-section">
-              <h2>Payment Method</h2>
-              {/* Payment fields and integration go here */}
-            </div>
-            <button type="submit" className="pay-button">Pay</button>
-          </form>
-        </div>
+        <form onSubmit={handleSubmit} className="payment-form">
+          <h1 className="form-title">Checkout</h1>
+          <div className="form-section">
+            <h2>Billing Information</h2>
+            <label>
+              Email
+              <input type="email" value={email} onChange={handleEmailChange} placeholder="Enter your email" required />
+            </label>
+            <label>
+              Name
+              <input type="text" value={name} onChange={handleNameChange} placeholder="Enter your name" required />
+            </label>
+            <label>
+              Address
+              <input type="text" value={address} onChange={handleAddressChange} placeholder="Enter your address" required />
+            </label>
+            {/* Additional fields */}
+          </div>
+          <div className="form-section">
+            <h2>Payment Method</h2>
+            {/* Payment fields and integration */}
+          </div>
+          <button type="submit" className="pay-button">Confirm and Pay</button>
+        </form>
         <div className="product-summary-container">
           {renderItemsForCheckout()}
         </div>
       </div>
-  
     </>
   );
 };

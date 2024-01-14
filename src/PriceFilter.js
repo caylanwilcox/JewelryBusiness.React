@@ -16,6 +16,7 @@ const PriceFilter = () => {
         className="filter-input"
         type="number"
         step='500'
+      
         value={filters.price.min || ''}
         onChange={(e) => handlePriceChange(e.target.value, filters.price.max)}
         placeholder="Min Price"

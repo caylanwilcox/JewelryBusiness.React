@@ -95,7 +95,7 @@ function Earring() {
      
 {filteredEarrings.map((earring) => (
   <article key={earring.id} onClick={() => handleBuyNow(earring)} className="headingCardContainer">
-    <div className="cardz" style={{ width: '400px' }}>
+    <div className="cardz" >
       <div className="cardHead" style={{ background: 'white' }}>
         <img src={cartIcon} alt="Cart" style={{ width: '40px' }} onClick={(event) => handleAddToCart(event, earring)}/>
       </div>

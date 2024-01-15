@@ -19,9 +19,50 @@ font-family:Georgia, 'Times New Roman', Times, serif;
 font-size: x-large;
 }
 /* Typography and Colors */
+
+/* Sidebar Styles */
 .sidebar {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333; /* Dark grey for better contrast */
+  width: 5%; /* Sidebar takes up 25% of the viewport width */
+  background-color: #fff; /* A clean, white background */
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  height: 100vh;
+  position: fixed;
+ margin-left: 12px;
+  top: 0;
+  overflow-y: auto;
+  font-family: 'Montserrat', sans-serif; /* Consistent font */
+
+}
+
+/* Sidebar Internal Elements Styling */
+.sidebar h4 {
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 600; /* Slightly bolder titles */
+}
+
+.sidebar input[type="number"],
+.sidebar input[type="text"],
+.sidebar select {
+  width: calc(100% - 20px); /* Full width minus padding */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.sidebar label {
+  display: block;
+  margin-bottom: 10px;
+  color: #666; /* Slightly muted text color */
+  font-size: 0.9rem;
 }
 
 

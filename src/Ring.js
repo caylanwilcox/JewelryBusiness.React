@@ -82,7 +82,7 @@ function Ring() {
           <section className="Shop">
             {filteredRings.map((ring) => (
               <article key={ring.id} onClick={() => handleBuyNow(ring)}className="headingCardContainer" >
-                <div className="cardz" style={{ width: '400px' }}>
+                <div className="cardz" >
                   <div className="cardHead" style={{ background: 'white' }}>
                     <img src={cartIcon} alt="Cart"  onClick={(event) => handleAddToCart(event, ring)} style={{ width: '40px' }} />
                   </div>

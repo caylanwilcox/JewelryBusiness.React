@@ -56,7 +56,7 @@ section.Shop {
   padding: 1rem; /* Padding around the entire grid */
   justify-content: center;
   align-items: stretch;
-margin: 3rem auto;
+width: 100%;
 
 }
 
@@ -64,6 +64,8 @@ margin: 3rem auto;
 @media only screen and (max-width: 600px) {
   section.Shop {
     grid-template-columns: 1fr;
+    padding: 0px;
+    margin-left: 0%;
   }
 }
 
@@ -89,6 +91,8 @@ margin: 3rem auto;
 }
 .headingCardContainer {
   width: 100%;
+  padding:0px;
+  margin:0px;
   height: auto;
   max-width: 400px; /* Adjust the max-width as needed */
 }
@@ -116,8 +120,9 @@ margin: 3rem auto;
   align-items: center;
   box-shadow: 0 0 12px rgba(30, 30, 39, 0.199); 
   overflow: hidden;
-
-  width: 400px;
+justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
   height: auto;
 }
 

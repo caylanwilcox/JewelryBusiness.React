@@ -40,58 +40,13 @@ width:100%;
   background-color: #333;
 }
 
-/* Sidebar Styles */
-.sidebar {
-  width: 5%; /* Sidebar takes up 25% of the viewport width */
-  background-color: #fff; /* A clean, white background */
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  height: 100vh;
-  position: fixed;
- margin-left: 12px;
-  top: 0;
-  overflow-y: auto;
-  font-family: 'Montserrat', sans-serif; /* Consistent font */
-
-}
-
-/* Sidebar Internal Elements Styling */
-.sidebar h4 {
-  color: #333;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  font-weight: 600; /* Slightly bolder titles */
-}
-
-.sidebar input[type="number"],
-.sidebar input[type="text"],
-.sidebar select {
-  width: calc(100% - 20px); /* Full width minus padding */
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sidebar input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-.sidebar label {
-  display: block;
-  margin-bottom: 10px;
-  color: #666; /* Slightly muted text color */
-  font-size: 0.9rem;
-}
-
 /* Adjust Main Content Area */
 /* Initial state of the main content area with a margin */
 .Shop {
   transition: margin-left 0.5s; /* Smooth transition for the margin change */
   padding: 20px;
+margin:0px;
 
-margin: 60px;
 }
 /* State of the main content area when sidebar is hidden */
 .Shop.expanded {
@@ -270,7 +225,10 @@ nav li:not(:last-child)::after {
   height: 100%; /* Adjust the height if you want the line to be shorter */
 }
 
-
+article{
+  margin:0px;
+  padding:0px;
+}
 .buyNow{
   margin-left: 5%;
   font-weight: bolder;
@@ -287,7 +245,7 @@ nav a{
   margin:0;
  color:rgb(255, 255, 255);
  font-family: 'Montserrat', sans-serif;
-
+width:100%;
  border-bottom: 2px solid #000000;
  font-weight:500;
 }
@@ -356,21 +314,8 @@ color: white;
   margin-bottom: 2rem; /* Space below the paragraph */
 }
 
-.shop-now-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: gold; /* A luxurious button color */
-  color: #030510; /* Text color for the button */
-  text-decoration: none; /* Remove underline from the link */
-  border: none;
-  border-radius: 5px; /* Rounded corners for the button */
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
-}
 
-.shop-now-button:hover {
-  background-color: #ffffff; /* Lighter color on hover */
-  color: #030510;
-}
+
 
 .titleBckNecklace{
  

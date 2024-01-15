@@ -25,7 +25,7 @@ const MainContent = () => {
         </article>
       </section>
 
-      <section className="Shop" style={{marginLeft: '8%'}}>
+      <section className="Shop" >
         <article>
           <div className="headingCardContainer">
             <h1 className="heading1"></h1>

@@ -239,5 +239,10 @@ align-content: center;
  a {
   display: flex;
   justify-content: center;
+  font-weight: 650;
+
+ }
+ ul li a{
+  font-size: 14px;
  }
 }

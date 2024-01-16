@@ -26,9 +26,10 @@ const MainContent = () => {
       </section>
 
       <section className="Shop" >
+     
         <article>
           <div className="headingCardContainer">
-            <h1 className="heading1"></h1>
+            <h1 className="heading1">Shop</h1>
             <Link to='./Earring' style={{ textDecoration: 'none' }} onClick={handleScroll}>
               <div className="cardz" style={{ display: 'flex', height: '325px', alignItems: 'center' }}>
 

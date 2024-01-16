@@ -213,9 +213,9 @@ font-size: 17px;
 
 
 .heading1{
- 
+ color:rgb(97, 96, 96);
   box-shadow: #0000005f;
-  margin-top:1.5%;
+  margin-top:2% 0;
   display: flex;
   justify-content: center;
 align-content: center;

@@ -232,8 +232,8 @@ align-content: center;
 }
 @media only screen and (max-width: 600px) {
  a .cardz{
-  width: 70%;
-  height: 190px;
+  width: 80%;
+  height: 250px;
   justify-content: center;
  }
  a {

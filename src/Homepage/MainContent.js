@@ -29,9 +29,9 @@ const MainContent = () => {
      
         <article>
           <div className="headingCardContainer">
-            <h1 className="heading1">Shop</h1>
+            <h1 className="heading1"><div class="text-placeholder">Shop</div></h1>
             <Link to='./Earring' style={{ textDecoration: 'none' }} onClick={handleScroll}>
-              <div className="cardz" style={{ display: 'flex', height: '325px', alignItems: 'center' }}>
+              <div className="cardz" style={{ display: 'flex',  alignItems: 'center' }}>
 
                 <img src={Earring2} alt="Card image" style={{ marginTop: '29px', width: '50%', height: 'auto' }} />
                 <div className="card-body">
@@ -47,7 +47,7 @@ const MainContent = () => {
           <div className="headingCardContainer">
             <h1 className="heading1"></h1>
             <Link to='./ring' style={{ textDecoration: 'none' }} onClick={handleScroll}>
-              <div className="cardz" style={{ height: '325px' }} >
+              <div className="cardz"  >
                 <img src={Diamondr} alt="Card image" style={{ width: '50%', marginTop: '0px', height: 'auto' }} />
                 <div className="card-body">
 
@@ -63,7 +63,7 @@ const MainContent = () => {
           <div className="headingCardContainer">
             <h1 className="heading1"></h1>
             <Link to='./Necklace' style={{ textDecoration: 'none' }} onClick={handleScroll}>
-              <div className="cardz" style={{ display: 'flex', height: '325px', alignItems: 'center' }}>
+              <div className="cardz" style={{ display: 'flex', alignItems: 'center' }}>
                 <img src={necklace1} alt="Card image" style={{ marginTop: '0px', width: '60%', height: 'auto' }} />
                 <div className="card-body">
 

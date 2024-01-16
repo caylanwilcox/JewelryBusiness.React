@@ -123,7 +123,7 @@ width: 100%;
 justify-content: center;
   width: 100%;
   margin-bottom: 25px;
-  height: auto;
+  height: 325px;
 }
 
 .cardz:hover {
@@ -220,4 +220,24 @@ font-size: 17px;
   justify-content: center;
 align-content: center;
 
+}
+.text-placeholder {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .text-placeholder {
+    display: block; /* or inline, inline-block, etc., depending on your layout */
+  }
+}
+@media only screen and (max-width: 600px) {
+ a .cardz{
+  width: 70%;
+  height: 190px;
+  justify-content: center;
+ }
+ a {
+  display: flex;
+  justify-content: center;
+ }
 }

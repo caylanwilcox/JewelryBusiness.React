@@ -186,6 +186,7 @@ font-size: x-large;
     .dropNav{
       position:sticky;
       top: 0;
+      background-color: white;
     }
     
   }

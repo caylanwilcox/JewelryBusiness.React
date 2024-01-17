@@ -69,9 +69,8 @@
 }
 
 /* Redesign Remove button */
-.remove-button {
-    background-color: #f44336b9; /* A bold color for removal action */
-    border: none;
+.remove-button {/* A bold color for removal action */
+    border: 2px solid #f0ededb9;
     color: #fff;
     padding: 5px 5px;
     cursor: pointer;
@@ -79,10 +78,11 @@
     font-size: 0.9rem;
     font-weight: 900;
     transition: background-color 0.3s ease;
+    background-color: white;
 }
 
 .remove-button:hover {
-    background-color: #c12d2d; /* Darken on hover */
+    background-color: #7a7a7a10; /* Darken on hover */
 }
 
 /* Checkout Button */

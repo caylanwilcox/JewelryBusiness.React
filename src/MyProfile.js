@@ -1,37 +1,87 @@
-import React from 'react';
 import './cssFiles/MyProfile.css';
 import Header from './Homepage/Header';
+import React, { useState, useEffect } from 'react';
+
 const MyProfile = () => {
+    const [fullName, setFullName] = useState(localStorage.getItem('fullName') || 'John Doe');
+    const [email, setEmail] = useState(localStorage.getItem('email') || 'john.doe@example.com');
+    const [address, setAddress] = useState(localStorage.getItem('address') || '123 Ecommerce St, Shopville');
+    const [phoneNumber, setPhoneNumber] = useState(localStorage.getItem('phoneNumber') || '+1234567890');
+    const handleFullNameChange = (e) => {
+        setFullName(e.target.value);
+    };
+    
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+    
+    const handleAddressChange = (e) => {
+        setAddress(e.target.value);
+    };
+    
+    const handlePhoneNumberChange = (e) => {
+        setPhoneNumber(e.target.value)
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent the default form submission behavior
+        localStorage.setItem('fullName', fullName);
+        localStorage.setItem('email', email);
+        localStorage.setItem('address', address);
+        localStorage.setItem('phoneNumber', phoneNumber);
+    
+        // You might want to give some feedback to the user or redirect
+    };
     return (
         <>
-        <Header/>
-        <div className="profile-container">
-            <h2 className="profile-title">My Profile</h2>
-            
-            <div className="profile-detail">
-                <label className="detail-label">Full Name:</label>
-                <span className="detail-value">John Doe</span>
+            <Header />
+            <div className="profile-container">
+                <h2 className="profile-title">My Profile</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="profile-detail">
+                        <label className="detail-label">Full Name:</label>
+                        <input 
+                            className="detail-value" 
+                            type="text" 
+                            value={fullName} 
+                            onChange={handleFullNameChange} 
+                        />
+                    </div>
+                    
+                    <div className="profile-detail">
+                        <label className="detail-label">Email:</label>
+                        <input 
+                            className="detail-value" 
+                            type="email" 
+                            value={email} 
+                            onChange={handleEmailChange} 
+                        />
+                    </div>
+                    
+                    <div className="profile-detail">
+                        <label className="detail-label">Address:</label>
+                        <input 
+                            className="detail-value" 
+                            type="text" 
+                            value={address} 
+                            onChange={handleAddressChange} 
+                        />
+                    </div>
+                    
+                    <div className="profile-detail">
+                        <label className="detail-label">Phone Number:</label>
+                        <input 
+                            className="detail-value" 
+                            type="tel" 
+                            value={phoneNumber} 
+                            onChange={handlePhoneNumberChange} 
+                        />
+                    </div>
+    
+                    <button type="submit" className="edit-button">Save Profile</button>
+                </form>
             </div>
-            
-            <div className="profile-detail">
-                <label className="detail-label">Email:</label>
-                <span className="detail-value">john.doe@example.com</span>
-            </div>
-            
-            <div className="profile-detail">
-                <label className="detail-label">Address:</label>
-                <span className="detail-value">123 Ecommerce St, Shopville</span>
-            </div>
-            
-            <div className="profile-detail">
-                <label className="detail-label">Phone Number:</label>
-                <span className="detail-value">+1234567890</span>
-            </div>
-
-            <button className="edit-button">Edit Profile</button>
-        </div>
         </>
     );
-}
-
+    
+    }
 export default MyProfile;

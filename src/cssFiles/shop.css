@@ -236,10 +236,11 @@ font-size: 17px;
  color:rgb(97, 96, 96);
   box-shadow: #0000005f;
   margin-top:2% 0;
-  display: flex;
+  display: block;
   justify-content: center;
 align-content: center;
-
+text-align: center;
+margin-bottom: 20px;
 }
 .text-placeholder {
   display: none;
@@ -247,14 +248,24 @@ align-content: center;
 
 @media screen and (max-width: 500px) {
   .text-placeholder {
-    display: block; /* or inline, inline-block, etc., depending on your layout */
+    display: inline-block; /* or inline, inline-block, etc., depending on your layout */
+ 
+  }
+  .headingCardContainer{
+    display: flex;
+    justify-content: center;
   }
 }
+
 @media only screen and (max-width: 600px) {
  a .cardz{
   width: auto;
   height: 250px;
   justify-content: center;
+  
+ }
+ div .pageContent{
+  margin-top: 15px;
  }
  a {
   display: flex;
@@ -265,8 +276,9 @@ align-content: center;
  ul li a{
   font-size: 14px;
  }
- .cardz{
-justify-content: center;
-  width: 250px;
- }
+div .cardz{
+  margin-bottom: 0px;
+  width: 80%;
+  height: auto;
+}
 }

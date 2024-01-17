@@ -182,11 +182,16 @@ font-size: x-large;
   }
 }
 @media (max-width: 500px) {
- 
+  .sideBarContainer {
+   display:none;
+  }
+}
     .dropNav{
       position:sticky;
       top: 0;
       background-color: white;
+      padding:5px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.112);
     }
     
-  }
+  

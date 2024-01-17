@@ -21,7 +21,7 @@ function ShoppingCart() {
             <Header />
             <div className="cart-container">
         
-                <h2 className="cart-title">My Shopping Cart</h2>
+                <h2 className="cart-title">Shopping Cart</h2>
                 <ul className="cart-items">
                 {cartItems.map((item, index) => (
     <li key={index} className="cart-item">

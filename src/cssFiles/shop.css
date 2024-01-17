@@ -123,10 +123,30 @@ width: 100%;
 justify-content: center;
   width: 100%;
   margin-bottom: 25px;
-  height: 325px;
+  height: 400px;
 }
 
 .cardz:hover {
+  box-shadow: 0 0 12px rgba(30, 30, 39, 0.626); 
+  
+ cursor: pointer;
+}
+.cardzz:hover .titleImageCover::after, .cardz:focus .titleImageCover::after {
+  transform: translateX(5px); /* Move the arrow on hover/focus */
+}
+.cardzz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 12px rgba(30, 30, 39, 0.199); 
+  overflow: hidden;
+justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
+  height: 325px;
+}
+
+.cardzz:hover {
   box-shadow: 0 0 12px rgba(30, 30, 39, 0.626); 
   
  cursor: pointer;
@@ -232,7 +252,7 @@ align-content: center;
 }
 @media only screen and (max-width: 600px) {
  a .cardz{
-  width: 80%;
+  width: auto;
   height: 250px;
   justify-content: center;
  }
@@ -244,5 +264,9 @@ align-content: center;
  }
  ul li a{
   font-size: 14px;
+ }
+ .cardz{
+justify-content: center;
+  width: 250px;
  }
 }

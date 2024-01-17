@@ -32,9 +32,8 @@ const MainContent = () => {
 
           <div className="headingCardContainer">
             <Link to='./Earring' style={{ textDecoration: 'none' }} onClick={handleScroll}>
-              <div className="cardzz" style={{ display: 'flex',  alignItems: 'center' }}>
-
-                <img src={Earring2} alt="Card image" style={{ marginTop: '29px', width: '50%', height: 'auto' }} />
+              <div className="cardzz" style={{  marginTop: '20px', }}>
+              <img src={Earring2} alt="Card image" style={{ width: '50%', marginTop: '0px', height: 'auto' }} />
                 <div className="card-body">
 
                 </div>

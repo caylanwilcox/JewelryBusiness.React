@@ -3,10 +3,10 @@ import Header from './Homepage/Header';
 import React, { useState, useEffect } from 'react';
 
 const MyProfile = () => {
-    const [fullName, setFullName] = useState(localStorage.getItem('fullName') || 'John Doe');
-    const [email, setEmail] = useState(localStorage.getItem('email') || 'john.doe@example.com');
-    const [address, setAddress] = useState(localStorage.getItem('address') || '123 Ecommerce St, Shopville');
-    const [phoneNumber, setPhoneNumber] = useState(localStorage.getItem('phoneNumber') || '+1234567890');
+    const [fullName, setFullName] = useState(localStorage.getItem('fullName') || 'Full Name');
+    const [email, setEmail] = useState(localStorage.getItem('email') || 'Email');
+    const [address, setAddress] = useState(localStorage.getItem('address') || 'Address');
+    const [phoneNumber, setPhoneNumber] = useState(localStorage.getItem('phoneNumber') || 'Phone Number');
     const handleFullNameChange = (e) => {
         setFullName(e.target.value);
     };

@@ -20,20 +20,21 @@ function ShoppingCart() {
         <>
             <Header />
             <div className="cart-container">
-                <Link to="/MyProfile">
-                    <img src={ProfileIcon} alt="Logo" className="cart-logo" />
-                </Link>
+        
                 <h2 className="cart-title">My Shopping Cart</h2>
                 <ul className="cart-items">
-                    {cartItems.map((item, index) => (
-                        <li key={index} className="cart-item">
-                            <span>{item.name}</span>
-                            {/* Other item details */}
-                            <span>Price: ${item.price}</span>
-                            <button className="remove-button" onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
-
-                        </li>
-                    ))}
+                {cartItems.map((item, index) => (
+    <li key={index} className="cart-item">
+        <img src={item.imageUrl} alt={item.name} className="cartImage"/>
+        <div>
+            <span className="product-name">{item.name}</span>
+            <span className="product-price">Price: ${item.price}</span>
+        </div>
+        <button className="remove-button" onClick={() => handleRemoveFromCart(item.id)}>
+            <span className='removetxt'>X</span>
+        </button>
+    </li>
+))}
                 </ul>
                 {/* Calculate the total */}
                 <div className="cart-total">

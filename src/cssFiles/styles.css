@@ -518,5 +518,8 @@ align-content: center;
     border-right: none;
   
   }
-  
+  .square2 p{
+    font-size: medium;
+  }
+  .square2 h1{font-size: large;}
   }

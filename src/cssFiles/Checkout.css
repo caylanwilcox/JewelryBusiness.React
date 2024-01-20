@@ -98,6 +98,10 @@
   .checkout-body {
     grid-template-columns: 1fr;
   }
+  .product-item{
+    display: flex;
+    align-items: start;
+  }
 
   .checkout-footer {
     grid-column: 1;

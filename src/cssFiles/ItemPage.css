@@ -36,9 +36,9 @@
 }
 
 .add-to-cart-btn {
-    background-color: rgb(58, 67, 112); /* Adjust the color to match your screenshot */
-    border: none;
-    color: white;
+    background-color: white; 
+    
+    border: 1px solid #8f8f8fb9;   
     padding: 10px 20px;
     text-transform: uppercase;
     font-weight: bold;
@@ -49,7 +49,8 @@
     border-radius: 5px;
     margin-bottom: 15px;
 }
-
+.add-to-cart-btn:hover{
+    border: 2px solid #8f8f8fb9;   }
 .payment-options {
     margin-bottom: 20px;
 }

@@ -24,16 +24,16 @@ const MainContent = () => {
           </div>
         </article>
       </section>
+      <h1 className="heading1"><div class="text-placeholder">Shop</div></h1>
 
       <section className="Shop" >
-     
+      
         <article>
-        <h1 className="heading1"><div class="text-placeholder">Shop</div></h1>
 
           <div className="headingCardContainer">
             <Link to='./Earring' style={{ textDecoration: 'none' }} onClick={handleScroll}>
-              <div className="cardzz" style={{  marginTop: '20px', }}>
-              <img src={Earring2} alt="Card image" style={{ width: '50%', marginTop: '0px', height: 'auto' }} />
+              <div className="cardzz" style={{  marginTop: '7px', }}>
+              <img src={Earring2} alt="Card image" style={{ width: '50%', marginTop: '50px', height: 'auto' }} />
                 <div className="card-body">
 
                 </div>

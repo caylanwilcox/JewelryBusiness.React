@@ -1,0 +1,68 @@
+.hamburger-button {
+    /* Basic styling for hamburger button */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative; /* Adjust the position of the hamburger button */
+    top: -45px; /* Adjust the value as needed to position the button higher */
+    left: 10px;  
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items in a row */
+    grid-gap: 0; /* This ensures there is no gap between the grid items */
+  }
+  
+  .menu-grid li {
+    list-style-type: none; /* This removes bullet points from list items */
+    border: .2px solid white; /* This adds the white border around each grid item */
+    margin: 0; /* Ensures that there are no margins pushing the grid items apart */
+    background-color: rgb(33, 33, 33); /* Sets the background color of each grid item */
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+  }
+  
+  .menu-grid li::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* This creates a square aspect ratio */
+    /* Ensures the square's size is based on the width of the `li` */
+  }
+  
+  .menu-grid li a {
+    position: absolute; /* This takes the link out of the document flow */
+    top: 0; /* Align the link to the top of the `li` */
+    right: 0; /* Align the link to the right of the `li` */
+    bottom: 0; /* Align the link to the bottom of the `li` */
+    left: 0; /* Align the link to the left of the `li` */
+    display: flex; /* This will make sure the content inside the link is properly aligned */
+    justify-content: center; /* This will horizontally center the content inside the link */
+    align-items: center; /* This will vertically center the content inside the link */
+    color: white; /* This sets the text color */
+  font-family: serif;
+  font-weight: lighter;
+    text-decoration: none; /* This removes underline from links */
+  }
+  
+
+  
+  .nav-grid {
+    display: none; /* Initially hidden */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust size as needed */
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .nav-item {
+    background-color: #f0f0f0; /* Light grey, adjust as needed */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* Media query for screen sizes less than 500px */
+  @media (max-width: 500px) {
+    .nav-grid {
+      display: grid; /* Only display grid on small screens */
+    }
+  }
+  

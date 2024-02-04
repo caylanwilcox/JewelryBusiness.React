@@ -479,6 +479,9 @@ align-content: center;
      text-align: center;
   
     }
+    .cart-badge{
+    right: 8px; /* Adjust as needed */
+    }
    .special-offers p{
     font-size: 8px;
     text-align: center;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState,useEffect  } from 'react';
 import { Link } from 'react-router-dom';
 import { SearchContext } from '../SearchContext';
 import HeaderImage from "../image/Asset 1@3x.png";
@@ -8,12 +8,28 @@ import SearchIcon from '../image/search-Icon.png';
 import { CartContext } from '../Cart.Context';
 import { useNavigate } from 'react-router-dom';
 import SearchResultsPage from '../SearchResultsPage';
+import HamburgerMenu from '../HamburgerMenu';
 function Header() {
   const { setSearchTerm, searchTerm, performSearch } = useContext(SearchContext);
   const [showSearch, setShowSearch] = useState(false);
-  const {cartItems,setIsDirectCheckout}=useContext(CartContext)
-  const navigate = useNavigate(); // Initialize useNavigate
+  const { cartItems, setIsDirectCheckout } = useContext(CartContext);
+  const navigate = useNavigate();
 
+  // State to manage the visibility of the hamburger menu
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 500);
+
+  // Effect hook to listen for window resize events
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 500);
+    };
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function to remove event listener
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
@@ -33,7 +49,6 @@ function Header() {
   };
   return (
     <div>
-      <nav className="shipping">Free Shipping on Orders $99</nav>
     
       <div className="topbanner"></div>
       <header>
@@ -51,26 +66,30 @@ function Header() {
 )}
           </Link>
           <Link to="/MyProfile">
-            <img src={ProfileIcon} alt="Profile" className="icon" />
+           {!isMobile &&  <img src={ProfileIcon} alt="Profile" className="icon" />}
           </Link>
         </div>
      
       </header>
+      {isMobile && <HamburgerMenu />}
+      {!isMobile && (
       <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/Necklace">Necklace</Link></li>
-          <li><Link to="/Earring">Earring</Link></li>
-          <li><Link to="/Ring">Ring</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/Contact">Contact</Link></li>
-          {/*
-          <button onClick={toggleSearch} className="search-icon-button">
-            <img src={SearchIcon} alt="Search" className="icon" />
-          </button>
-            */}
-        </ul>
-      </nav> 
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/Necklace">Necklace</Link></li>
+        <li><Link to="/Earring">Earring</Link></li>
+        <li><Link to="/Ring">Ring</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/Contact">Contact</Link></li>
+        {/*
+        <button onClick={toggleSearch} className="search-icon-button">
+          <img src={SearchIcon} alt="Search" className="icon" />
+        </button>
+          */}
+      </ul>
+    </nav> 
+      )}
+      
       {/*
       {showSearch && (
           <div className="search-container">

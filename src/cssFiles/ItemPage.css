@@ -7,7 +7,7 @@
 }
 
 .product-image {
-    flex-basis: 50%;
+    flex-basis: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,11 +55,32 @@
 .payment-options {
     margin-bottom: 20px;
 }
-@media (max-width:500px)
-{
-.product-image{
-    display: flex;
-    align-items: start;
-    margin-right :25px;
-}
-}
+@media (max-width: 500px) {
+    .buy-now-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px; /* Reduced padding for smaller screens */
+    }
+  
+    .product-image {
+      flex-basis: auto; /* Allow the image container to size itself based on its content */
+      width: 100%; /* Use the full width of the container */
+      justify-content: center; /* Center the image horizontally */
+      align-items: center; /* Center the image vertically */
+      margin: 0; /* Reset any margins */
+    }
+  
+    .product-image img {
+      width: auto; /* Allow the image to maintain its aspect ratio */
+      max-width: 100%; /* Limit the image width to the width of its container */
+      height: auto; /* Allow the image height to scale based on its width */
+    }
+  
+    .product-details {
+      width: 100%; /* Full width of the container */
+      padding: 10px; /* Adjust padding as needed */
+    }
+  
+    /* Other styles as needed */
+  }
+  
